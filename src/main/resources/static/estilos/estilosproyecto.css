@@ -1,0 +1,960 @@
+/*CONIGURACIONES GENERALES*/
+
+.hoverOrange:hover{         /*para hacer las letras naranjas cuando mouse*/
+  color:rgb(109,178,81) !important;
+  font-weight: bold;
+ }
+
+ .botonesGeneral{
+   color: white;
+   background-color:rgb(109,178,81) !important; 
+   border-radius: 15px;
+ }
+
+ .botonesGeneral:hover {       
+   background-color:rgb(113, 211, 74) !important; 
+ }
+
+ .footerYBarraSupGeneral{
+   color:black !important;
+   font-size: 18px !important;
+   margin-left: 65px;
+   margin-right:65px;
+   padding: 8px;  
+   }
+  
+   .pie{
+     width: 100%;
+     
+   }
+
+   .spanErrorEstilo{
+    color:rgb(212,23,23); 
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+
+.navbar-brand{
+  width: 35%;
+  height: 10%;
+  margin: 0px 0px 0px 0px ;
+  padding: 0px 0px 0px 0px ;
+}
+
+
+.margenNavBar{
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+.buscadorNavBar{
+  width: 70% !important;
+  height: 100%;
+  
+}
+.form-inline{
+  width: 40% !important;
+  
+}
+.botonNavBar{
+  width: 20%;
+  height: 28px !important;
+  padding-top: 0%;
+  color: white;
+   background-color:rgb(109,178,81);
+   border-radius: 6px;
+}
+.botonNavBar:hover{
+  background-color:rgb(113, 211, 74);
+}
+.iconoPerfil{
+  height: 80%;
+  width: 10%;
+  position:relative;
+  margin-left: 0%;
+
+}
+
+.bodyPerfil{
+  overflow-x:hidden;
+}
+
+
+/* .. acá empiezan estilos del index nuevo......*/
+.box11{
+  overflow: hidden;
+}
+
+.respIndex{
+  width: 100% !important;
+  height: 78%;
+}
+
+
+@media(max-width:1024px){
+  .box11, .login11, .loginRapido, .login-form{
+    width: 100% !important;
+  margin-left: 0% !important;
+  margin-right: 0%;
+  height:75%;
+  }
+}
+
+.form-control{
+  width: 385px !important;
+  padding: 0% 0% 0% 0%;
+}
+
+@media(max-width:1024px){
+  .form-control{
+    width: 90% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+  }
+}
+
+
+.registrateAca{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+
+.ingresaATuCuenta{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.logo11{
+  height: 250px;
+  width: 40%;
+  float:left;
+  margin: 0px;
+}
+.logo11 img.imgIndex{
+  width: 80%;
+  height: 80%;
+}
+
+
+@media(max-width:1024px){
+  .logo11{
+    display: none;
+  }
+}
+
+.logo11 img{
+  height: 170px;
+  width: 65%;
+  position: relative;
+  left: 20px;
+  top: 25px;
+}
+
+
+
+.paddingNavbar{
+  padding-right: 0px !important;
+
+}
+
+.login11{
+  height: 320px;
+  width: 60%;
+  float:left;
+  margin: 0px;
+  font-size: 21px;
+  background-color: white;
+}
+
+
+.login-form{
+  width: 90%;
+  padding: 0px;
+}
+.form-centrado{
+  font-size: 18px;
+  padding-left:25%;
+  padding-top: 10px;
+  color: green;
+}
+.loginRapido{
+  font-size: 15px;
+  background-color: white;
+}
+
+.label-text{
+  margin-top: 10px;
+}
+.carrousel1{
+  width: 100%;
+}
+
+.elMundoNecesita{
+  text-align: center;
+}
+.elMundoNecesitaTamaño{
+  font-size: 30px !important;
+}
+
+/* ......hasta acá lo q serían estilos del index nuevo......*/
+
+.muro{
+
+}
+.notificaciones article{
+  background-color:rgb(224, 247, 224);
+  border:  #9AC00F 1px solid;
+  height:270px;
+  margin-top: 20px;
+  padding: 10px;
+}
+.notificaciones article h6{
+  color: grey;
+}
+
+
+
+.chat{
+  
+  margin-top: 35px;
+  border: rgb(109,178,81) solid 1px ;
+  border-radius: 15px;
+  width: fit-content;
+  height: 400px;
+  position: fixed;
+  margin-left: 80%;
+  overflow-y: scroll;  
+}
+
+@media (max-width: 800px){
+  .chat{
+    display: none;
+  }
+  
+} 
+
+
+
+#chat h6{
+  text-align: center;
+}
+.personaChat2 a{
+  color: rgb(109,178,81); 
+}
+
+div.row {
+    margin: 0px 0px;
+    padding: 0px 0px;
+  }
+
+
+
+  body nav , .contenedorLogin{
+      background-color: #9AC00F;
+  }
+
+  nav{
+      background-color:black;
+  }
+
+  nav div img{
+      height: 80px;
+      width: 80px;
+
+  }
+  nav ul li a{
+      font-size: 18pt;
+  }
+  .watch, .novedades, .eventos{
+      background-color:rgb(224, 247, 224) ;
+
+  }
+
+
+  #chat{
+    
+    color: rgb(109,178,81);
+    background-color: white;
+    height: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      overflow:hidden;
+
+
+
+  }
+   .personaChat, .personaChat2{
+    float:left;
+    margin: 5px;
+
+    box-sizing: border-box;
+   }
+
+  #chat img{
+    height: 20px;
+      width: 20px;
+  }
+
+  .barra nav ul li a{
+      font-size: 13pt;
+  }
+
+
+  .noticias{
+      overflow:hidden;
+
+  }
+#comentarModal, #compartirModal{
+   /* border:none;
+    width:390px;
+    height: 450px;
+    background-color:none;
+    padding: 0px ;
+    margin: 30px; d
+    padding: 10px; 
+    box-sizing: border-box 100px;
+    box-sizing:border-box;  */  
+    
+    width:25%;
+    height: 50%;
+    float:left;
+    margin-left:35% !important;
+    margin-top: 10% !important;    
+    font-size: 15pt;
+    overflow:hidden;    
+    border-radius: 15px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px ;
+} 
+
+@media(max-width: 1024px){
+  #comentarModal, #compartirModal{
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+  }
+}
+
+.emergenteDivRompeBolas{            /*son los divs internos de las ventanas emergentes*/
+width:100%;
+ height:100%;
+ border: none !important;
+ margin-bottom: 0px !important;
+ padding-bottom: 15px !important;
+ background-color: rgb(109,178,81); 
+}
+
+@media(max-width:1024px){
+  .emergenteDivRompeBolas{
+    width: 100% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    
+  }
+}
+
+.emergenteMail{
+  width: 95%;
+  height: 15%;
+  margin-left: 5%;
+  margin-right: 5%;  
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.emergenteComentar{
+  width: 95%;
+  height: 50%;
+  margin-left: 5%;
+  margin-right: 5%; 
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.emergenteBtnEnviar{
+  width: 95%;
+  height: 15%;
+  margin-left: 5%;
+  margin-right: 5%;  
+
+}
+.emergenteBtnCerrar{
+  width: 95%;
+  height: 15%;
+  margin-left: 5%;
+  margin-right: 5%;  
+
+}
+
+  .noticias .divNoticias {    
+
+    background-color: whitesmoke!important;
+    border: #9AC00F 1px solid;
+    padding: 10px;
+    margin: 20px;
+    box-sizing: border-box 100px;
+    width:360px;
+    height: 400px;
+    float:left;
+    margin-left:2%;
+    box-sizing:border-box;
+    font-size: 15pt;
+    overflow:hidden;
+    background-color: rgb(224, 247, 224);
+    border-radius: 15px;
+    }
+    div.divNoticias a{
+      color: #9AC00F ;
+            
+    }
+    
+  .noticias div img{
+      height: 35px;
+      width: 35px;
+      border-radius: 15px;
+      padding: 5px;
+  }
+  
+
+  @media(max-width: 360px){
+   .noticias div{
+  width: 90% !important;      
+    }
+   #post  img{
+     width: 60%;
+     height: 30%;
+   }
+  }
+
+  #post{
+    border: none;
+    margin-bottom: 15px;
+    width:100%;
+    height: 240px;
+    float:left;
+    box-sizing:border-box;
+  }
+
+  #iconos{
+    border: none;
+    width: 100%;
+    height: 40px;
+    margin: 1px;
+    overflow:hidden;
+  }
+  
+
+ 
+   #meGusta, #compartir, .button{
+
+    float:left;
+    background: none;
+    border: none;
+
+   }
+
+  #post img{
+      width: 100%;
+      height:100%;
+
+  }
+  .pie nav ul li a{
+      font-size: 13pt;
+
+  }
+/*-----empieza Contacto ----*/
+  /* aca comienza el encabezado*/
+  #encabezado-registro{
+      background-color: #9AC00F;
+      height: 132px;
+  }
+
+  header p{
+      display: inline;
+  }
+
+  .formulario-contact .row{
+  background-color:rgb(222, 241, 227);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  margin-top: 30px;
+  padding: 15px;
+
+  }
+  .contacto h4, .contacto h3{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: green;
+    text-align: center;
+  }
+  .Contacto{
+    color:  white;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    width: 100% !important;
+
+  }
+  /*nuevo perfil */
+  .headerDePerfil{
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .divDeImagenDePerfil{
+    
+    border: none;
+    margin: 0.5px;
+    width: 100%;
+  
+    box-sizing: border-box;
+    margin-top: -5%;
+    z-index: 10;
+    margin-left: 40%;
+  }
+
+  .imagenDePerfilNueva{
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 0px solid #000000;
+  margin-bottom: 20px;
+  width: 20%;
+  }
+
+  .imagenDePortada{
+    height: 300px ;
+  }
+
+  .mainPerfilNuevo{
+
+      overflow: hidden;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      padding-left: 10%;
+       
+  
+  }
+
+  .posteosPerfilNuevo{
+
+      width: 80%;
+      height: 400px;
+      background-color:whitesmoke ; 
+      border:  #9AC00F 1px solid;
+      box-sizing: border-box;
+      float: left;
+      margin: 5px 5px 5px 5px;
+      padding: 10px;
+      border-radius: 15px;
+  
+    }
+
+    .posteosDePerfil{
+      width: 100%;
+      height: 80%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .botonmegusta{
+      width: 60%;
+    }
+    
+    @media(min-width:300px){
+      .posteosPerfilNuevo{
+        width: 90%;
+      }
+    }
+
+    @media(min-width:500px - 1000px){
+      .posteosPerfilNuevo{
+        width: 60%;
+        margin-left: 15%;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .posteosPerfilNuevo{
+          width: 30%;
+      }
+  
+      .mainPerfilNuevo{
+          flex-direction: row;
+      }  
+  }  
+  
+  @media (min-width: 1200px){
+      .posteosPerfilNuevo{
+          width: 30% ;
+          
+      }
+  }
+  
+  
+
+    
+
+  /*----------aca empieza el perfil----------*/
+
+
+  header .registro div img{
+  max-width:100%;
+  height:auto;
+
+  }
+
+  .imagen-fondo-perfil img{
+      width: 100vw;
+      height: 400px;
+      margin-left: 0%;
+      margin-right: 0%;
+  }
+
+  main .perfil{
+      background-color: #9AC00F;
+      margin-top: -100px;
+      width: 100%;
+
+  }
+div.fotito-de-perfil{
+  width: 100%;
+
+
+}
+  .fotito-de-perfil img{
+
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 0px solid #000000;
+
+  margin-bottom: 20px;
+  width: 100%;
+  border: #9AC00F 3px solid;
+
+  }
+
+  #divdefoto{
+    border: none;
+    margin: 0.5px;
+    width: 100%;
+    height: 240px;
+    float: left;
+    box-sizing: border-box;
+
+  }
+
+
+  div .posteos .img{
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+
+
+  }
+  #posteos{
+    margin-top: 10px;
+    border: #9AC00F 4px solid;
+    padding: 10px;
+    margin: 20px;
+    box-sizing: border-box 100px;
+    width:260px;
+    height: 300px;
+    float:left;
+    margin-left:5%;
+    box-sizing:border-box;
+    font-size: 15pt;
+    overflow:hidden;
+    background-color: rgb(224, 247, 224);
+    border-radius: 15px;
+  
+
+
+}
+  div .posteos{
+      margin-bottom: 10px;
+  }
+
+  @media (max-width: 576px){
+    #posteos{
+      margin-left: 25%;
+      }
+     .fotito-de-perfil{
+       max-width: 50%;
+       margin-left: 150px;
+        }
+  
+  }
+
+  @media (max-width: 400px){
+    .fotito-de-perfil{
+     max-width: 40%;
+     margin-left: 110px;
+      }
+     #posteos{
+       margin-left: 13%;
+       }
+   
+  }
+ 
+  
+  @media (max-width: 300px){
+    .fotito-de-perfil{
+     max-width: 40%;
+     margin-left: 85px;
+    
+      }
+  }
+  
+ 
+  
+
+
+
+
+  /*----------aca termina el perfil-----*/
+  /*Aca empieza el CSS del login*/
+
+
+ /* .containerLogin, .containerContacto{
+
+    background-image: url(../imagenes/fondo2ab.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: unset;
+ }*/
+
+  .BienvenidoLogin{
+    font-style:bold;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+    text-align: center;
+    color: rgb(109,178,81);
+    /*text-shadow: 5px 3px  #9AC00F;*/
+
+  }
+
+  @media(min-width:1042px){
+    .box21{ 
+      padding-top: 40px;
+    }
+  }
+
+  .Loguearme{
+    color:  white;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    width: 385px !important;
+ }
+
+ @media(max-width:1024px){
+   .Loguearme{
+    width: 100% !important;
+  margin-left: 0% !important;
+  margin-right: 0%;
+   }
+ }
+
+  .recordar{
+    color: green;
+
+  }
+
+  .derechos{
+    text-align: center;
+    margin-left: 20%;
+    font-size: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+    color: green;
+
+    }
+  .img1login{
+    width: 30%;
+    margin-right:40%;
+    margin-left: 40%;
+    
+    margin-top: 5px;
+ 
+  }
+
+  @media(max-width: 900px){
+    .img1login{
+
+    width: 30%;
+    height: 30%;
+    margin-right: 35%;
+    margin-left: 35%;
+
+  }}
+
+
+
+  .btn-primary{
+    background-color: green;
+    border-color: #9AC00F;
+    width: 330px;
+  }
+
+  .form-text{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+
+  }
+
+
+
+
+  /*------Aca empieza el CSS del FAQ---------------------*/
+
+  body .flecha{
+    text-align: right;
+    margin: 0px, 0px, 0px, 0px;
+  }
+  .container{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .faq{
+   /* background-image: url(../imagenes/fondo2ab.png);   fonde verde oscuro polemico de Raquel*/ 
+    background-size: cover;
+    width: 100%;
+
+  }
+  .categorias{
+    font-size: 25px;
+    padding-top: 50px;
+
+  }
+  .categorias div{
+    margin-bottom: 35px;
+  }
+  .categorias div a{
+    color: rgb(127, 158, 13);
+  }
+  .signo img{
+    width: 200px;
+  }
+  img{
+    width: 100%;
+  }
+  .cuestionario{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: lightgray;
+  }
+  .flecha img{
+    height: 30px;
+    width: 20px;
+  }
+  .elemento{
+    display: block;
+  }
+  #uso-aplicacion h4, #adm-cuenta h4, #seguridad h4{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .cuestionario{
+    margin-bottom: 10px;
+  }
+  .viñeta{
+    color: green;
+  }
+  @media (min-width: 1200px){
+    .container{
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 768px){
+    .signo{
+      display: none;
+    }
+  }
+
+  form div h4, p{
+    text-align: center;
+  }
+
+/*----Aca empieza el CSS del registro--------*/
+  form textarea{
+    width: 90%;
+    color: grey;
+    font-style: italic;
+    text-align: left;
+  }
+
+  form button{
+    box-align: right;
+  }
+  .text-form{
+    font-size: 15px;
+    text-align: right;
+  }
+
+  .btn-date{
+  margin-right: 30px;
+  }
+
+  .inscripcion{
+    width: 100%;
+    margin-right: 0px;
+    margin-left:0px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .inscripcion h4{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: green;
+  }
+  .input-registro{
+    width: 90%;
+  }
+  .formulario-registro .row{
+  background-color:rgb(222, 241, 227);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  margin-top: 0px;
+  padding: 15px;
+
+  }
+  .Unite{
+    color:  white;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    width: 100% !important;
+
+  }
+
+  @media(max-width:768px){
+    .text-form{
+      text-align: left;
+    }
+    .input-registro{
+      width: 100%;
+    }
+    form textarea{
+      width: 100%;
+    }
+    .BienvenidoLogin{
+      font-style:bold;
+      text-align: center;
+      font-size: 40px;
+    }
+  }

@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["66sVu"]); }
+
+__d("MessengerDotComAndInboxM4Check.re",["MessengerDotComAndInboxM4Check.bs"],(function(a,b,c,d,e,f){a=b("MessengerDotComAndInboxM4Check.bs").yes;f.yes=a}),null);

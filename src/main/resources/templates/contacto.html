@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos\estilosproyecto.css">
+</head>
+<body>
+  <div class="containerContacto">
+    <header>
+              <nav class="navbar navbar-expand-lg navbar-light bg-light margenNavBar">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                      <a class="navbar-brand" href="MiMuro"><img class="navbar-brand" src="imagenes\LogoBaproClub.jpg"></abbr></a>
+                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos" placeholder="Persones / Amigues" aria-label="fotos/personas/grupos">
+                        <button class="btn btn-outline-success my-2 my-sm-0 botonNavBar" type="submit">Buscar</button>
+                      </form>
+                </div>
+            </nav>                  
+    </header>
+
+    <main>
+       <div class="container-fuid">
+          <div class="formulario-contact row">
+              <div class="col-md-12 contacto">
+                <h4>CONTACTATE CON NOSOTROS</h4>
+               
+                 
+              </div>
+                <div class="col-md-6 offset-md-3 formulario">
+                    <form class="row" action="home.html" method="POST">
+                        <p class="col-md-2">
+                          <label for="nombre">Nombre</label>
+                        </p>
+                        <p class="col-md-10">
+                          <input class="nombre" type="text" style="width:90%"; name="Nombre"><br><span class="spanErrorEstilo error-inputNombre"></span>
+                        </p>
+                        <p class="col-md-2">
+                          <label for="apellido">Apellido</label>
+                        </p>
+                        <p class="col-md-10">
+                          <input class="apellido" type="text" style="width:90%"; name="Apellido"><br><span class="spanErrorEstilo error-inputApellido"></span>
+                        </p>
+                        
+                        <p class="col-md-2">
+                          <label for="email">Mail</label>
+                        </p>
+                        <p class="col-md-10">
+                          <input class="email" type="email" style="width:90%;" name="mail"><br><span class="spanErrorEstilo error-inputEmail"></span>
+                        </p>
+
+                        <p class="col-md-2">
+                          <label for="udn">UDN</label>
+                        </p>
+                        <p class="col-md-10">
+
+                          <select name="" style="width:90%;" id="UDN">
+                              <option selected hidden value="0">Sucursal</option>
+                              <option value="Areas Centrales">Areas Centrales</option>
+                              <option value="5006">5006</option>
+                              <option value="5014">5014</option>
+                              <option value="5051">5051</option>
+                              <option value="5054">5054</option>
+                              <option value="5062">5062</option>
+                          </select><br><span class="spanErrorEstilo error-inputUdn"></span>
+                          </p>
+                          <p class="col-md-2">
+                            <label for="comentario-contact">Mensaje</label>
+                          </p>
+                          <p class="col-md-10">
+                              <label for="comenta" ></label>
+                              <textarea class="mensaje" id="comenta" name="comenta"  rows="4" cols="12" placeholder="Escribe tu mensaje aquí..." style="width:90%;"></textarea><br><span class="spanErrorEstilo error-inputMensaje"  ></span>
+                          </p>
+                          
+                          <button action="" class="btn btn-sm btn-outline-secondary btn-primary Contacto botonesGeneral" id="enviar" type="button" class="btn btn-outline-success">Enviar</button>
+                      </form>
+                  </div>
+
+              </div>
+        </div>
+
+    </main>
+    
+    <footer>
+      <div class="row content divFooter ">                 
+         <nav class="pie ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+             <ul class="navbar-nav ">                           
+                 <li class="nav-item">
+                 <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Desarrolladores</a>
+                 </li>
+                 <li class="nav-item active">
+                 <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Reglas de Uso </a>
+                 </li>
+                 <li class="nav-item">
+                 <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Privacidad</a>
+                 </li>
+                 <li class="nav-item">
+                 <a class="nav-link footerYBarraSupGeneral hoverOrange" href="FAQ.html">Preguntas Frecuentes</a>
+                 </li>
+                 <li class="nav-item">
+                 <a class="nav-link footerYBarraSupGeneral hoverOrange" href="contacto.html">Contacto</a>
+                 </li>
+               </ul>
+            </nav>
+          </nav>                    
+      </div>
+  </footer>
+    </div>
+    <script src="js/contacto.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos/estilosproyecto.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light margenNavBar">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="MiMuro."><img class="navbar-brand" src="imagenes\LogoBaproClub.jpg"></abbr></a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos" placeholder="Persones / Amigues" aria-label="fotos/personas/grupos">
+            <button class="btn btn-outline-success my-2 my-sm-0 botonNavBar" type="submit">Buscar</button>
+          </form>
+    </div>
+</nav>    
+      <div class="row">
+            <div class="col-sm-6">
+                  <div class="carrousel1">
+
+                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img class="d-block w-100" src="imagenes/image-1.jpg.jpg" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block w-100" src="imagenes/image-2.jpg.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block w-100" src="imagenes/image-3.jpg.jpg" alt="Third slide">
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="col-sm-6">
+                  <div class="respIndex">
+
+                    <div class="box11">
+                        <div class="logo11">
+                            <img  class ="imgIndex" src="imagenes\logofinal.png">
+                        </div>
+                        <div class="login11">
+                          <div class="login-form">
+                            <form class="loginRapido" action="index.html" method="post">
+                              <label class="form-centrado ingresaATuCuenta hoverOrange"><b>Ingresá a tu cuenta</b></label>
+                              <br>
+                              <input type="email" id="inputEmail" class="form-control email" placeholder="ejemplo@bpba.com.ar" required autofocus><span class="spanErrorEstilo error-inputEmail"></span>
+                              <br>
+                              <input type="password" id="inputPassword" class="form-control contrasenia" placeholder="Contraseña" required><span class="spanErrorEstilo error-contrasenia"></span>
+                              <label>
+                              <input type="checkbox" value="remember-me" class="label-text" >Recordar
+                              </label>
+                              <br>
+                              <a href="#"><button class="btn btn-sm btn-outline-secondary btn-primary Loguearme  botonesGeneral " type="button">Loguearme</button></a>
+                              <a href="#" class="nav-link form-centrado OlvidasteRegistrate hoverOrange" ><b>¿Olvidaste tu contraseña?</b></a>
+                              <a href="registro.html" class="nav-link  form-centrado registrateAca hoverOrange" ><b>Registrate acá!</b></a>
+
+                            </form>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box21">
+                       
+                          <h1 class="elMundoNecesita  elMundoNecesitaTamaño" >El mundo necesita gente que ame lo que hace!</h1>
+
+                          <p  class="elMundonecesita">ClubBP es la red para compañeros con ganas de comunicarse, expresarse y apotar ideas. Significa encontrar comunidad y mejorar el vinculo interpersonal en el espacio de trabajo.</p><br>
+                      </div>
+
+                  </div>
+            </div>
+
+      </div>
+
+<footer>
+    <div class="row content ">                 
+       <nav class="pie ">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+           <ul class="navbar-nav ">                           
+               <li class="nav-item">
+               <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Desarrolladores</a>
+               </li>
+               <li class="nav-item active">
+               <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Reglas de Uso </a>
+               </li>
+               <li class="nav-item">
+               <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Privacidad</a>
+               </li>
+               <li class="nav-item">
+               <a class="nav-link footerYBarraSupGeneral hoverOrange" href="FAQ.html">Preguntas Frecuentes</a>
+               </li>
+               <li class="nav-item">
+               <a class="nav-link footerYBarraSupGeneral hoverOrange" href="contacto.html">Contacto</a>
+               </li>
+             </ul>
+          </nav>
+        </nav>                    
+    </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
