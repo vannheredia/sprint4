@@ -32,4 +32,8 @@ build/
 
 ### Eclipse ###
 local.properties
-applicatio.properties
+.settings/
+.loadpath
+.recommenders
+
+application.properties
