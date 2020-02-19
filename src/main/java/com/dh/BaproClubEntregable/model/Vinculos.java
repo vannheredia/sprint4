@@ -15,32 +15,31 @@ public class Vinculos {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
-	private Integer ID;
+	private Integer id;
 	
 	@Column( nullable=false)
-	private Integer ID_usuario;
-	private Integer ID_usuarioSeguido;
+	private Integer idUsuario;
+	private Integer idUsuarioSeguido;
 
 	public Vinculos(Integer iD_usuario, Integer iD_usuarioSeguido) {
-		super();
-		ID_usuario = iD_usuario;
-		ID_usuarioSeguido = iD_usuarioSeguido;
+		idUsuario = iD_usuario;
+		idUsuarioSeguido = iD_usuarioSeguido;
 	}
 
-	public Integer getID_usuario() {
-		return ID_usuario;
+	public Integer getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setID_usuario(Integer iD_usuario) {
-		ID_usuario = iD_usuario;
+	public void setIdUsuario(Integer iD_usuario) {
+		idUsuario = iD_usuario;
 	}
 
-	public Integer getID_usuarioSeguido() {
-		return ID_usuarioSeguido;
+	public Integer getIdUsuarioSeguido() {
+		return idUsuarioSeguido;
 	}
 
-	public void setID_usuarioSeguido(Integer iD_usuarioSeguido) {
-		ID_usuarioSeguido = iD_usuarioSeguido;
+	public void setIdUsuarioSeguido(Integer iD_usuarioSeguido) {
+		idUsuarioSeguido = iD_usuarioSeguido;
 	}
 	
 	

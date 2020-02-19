@@ -36,19 +36,14 @@ public class UsuarioRestController {
 	//Obtener Usuario por ID
 	@GetMapping("{id}")
 	public Usuario getUsuario(@PathVariable("id")int id) {
-		
-		
 		Usuario unUsuario = usuarioJpaRepository.getOne(id);
 		return unUsuario;
 	}
 	
 	//Eliminar Usuarios
-	
 	@DeleteMapping("{id}")
 	public void deleteUsuario(@PathVariable("id")int id) {
-		
 		usuarioJpaRepository.deleteById(id);;
-		
 	}
 	
 	

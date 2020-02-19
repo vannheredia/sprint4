@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-	@GetMapping(" ") //index es igual a comillas vacias
-	public String getHome() {
+	@GetMapping("index") //index es igual a comillas vacias
+	public String getIndex() {
 	return "index";
 	}
 
@@ -29,6 +29,11 @@ public class HomeController {
 	@GetMapping("/perfil")
 	public String getPerfil() {
 	return "nuevoPerfil";
+	}
+	
+	@GetMapping("/faq")
+	public String getFaq() {
+	return "faq";
 	}
 
 	}

@@ -15,7 +15,7 @@ public class Usuario {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
-	private Integer ID;
+	private Integer id;
 	
 	@Column(unique=true, nullable=false)
 	private String nick;

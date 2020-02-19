@@ -16,31 +16,30 @@ public class Publicacion {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
-	private Integer ID;
-	@Column( nullable=false)
-	private Integer id_perfil;
-	private Date Fecha;
+	private Integer id;
+	@Column(nullable=false)
+	private Integer idPerfil;
+	private Date fecha;
 	
-	public Publicacion(Integer id_perfil, Date fecha) {
-		super();
-		this.id_perfil = id_perfil;
-		Fecha = fecha;
+	public Publicacion(Integer id_perfil) {
+		this.idPerfil = id_perfil;
+		this.fecha = new Date(0);
 	}
 
-	public Integer getId_perfil() {
-		return id_perfil;
+	public Integer getIdPerfil() {
+		return idPerfil;
 	}
 
-	public void setId_perfil(Integer id_perfil) {
-		this.id_perfil = id_perfil;
+	public void setIdPerfil(Integer id_perfil) {
+		this.idPerfil = id_perfil;
 	}
 
 	public Date getFecha() {
-		return Fecha;
+		return fecha;
 	}
 
 	public void setFecha(Date fecha) {
-		Fecha = fecha;
+		fecha = fecha;
 	}
 	
 	

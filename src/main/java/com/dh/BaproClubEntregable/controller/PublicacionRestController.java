@@ -7,6 +7,7 @@ import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
 
 @Controller
 public class PublicacionRestController {
+	
 	@Autowired
 	private PublicacionJpaRepository publicacionJpaRepository;
 
