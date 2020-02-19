@@ -1,6 +1,7 @@
 package com.dh.BaproClubEntregable.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,20 +19,22 @@ public class Publicacion {
 	@Id	
 	private Integer id;
 	@Column(nullable=false)
-	private Integer idPerfil;
+	private Integer idCuenta;
 	private Date fecha;
+	//private List<Usuario> corazones;
+	private String tipoDePosteo;
 	
 	public Publicacion(Integer id_perfil) {
-		this.idPerfil = id_perfil;
+		this.idCuenta = id_perfil;
 		this.fecha = new Date(0);
 	}
 
 	public Integer getIdPerfil() {
-		return idPerfil;
+		return idCuenta;
 	}
 
 	public void setIdPerfil(Integer id_perfil) {
-		this.idPerfil = id_perfil;
+		this.idCuenta = id_perfil;
 	}
 
 	public Date getFecha() {
@@ -40,6 +43,22 @@ public class Publicacion {
 
 	public void setFecha(Date fecha) {
 		fecha = fecha;
+	}
+
+	/*public List<Usuario> getCorazones() {
+		return corazones;
+	}
+
+	public void setCorazones(List<Usuario> corazones) {
+		this.corazones = corazones;
+	}*/
+
+	public String getTipoDePosteo() {
+		return tipoDePosteo;
+	}
+
+	public void setTipoDePosteo(String tipoDePosteo) {
+		this.tipoDePosteo = tipoDePosteo;
 	}
 	
 	

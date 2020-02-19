@@ -1,250 +1,358 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mi Muro</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>   
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/estilosproyecto.css">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Mi Muro</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="estilos/estilosproyecto.css">
+
 </head>
-<body >
-  <nav class="navbar navbar-expand-lg navbar-light bg-light margenNavBar footer">
-    <div class="collapse navbar-collapse footer" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="index"><img class="navbar-brand" src="imagenes\LogoBaproClub.jpg"></abbr></a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-          <form class="form-inline my-2 my-lg-0 ">
-            <a href="nuevoPerfil.html"><img src="imagenes/iconoPerfil.jpg" style="width: 35px; height: 30px;"></a>
-            <input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos" placeholder="Persones / Amigues" aria-label="fotos/personas/grupos">
-            <button class="btn btn-outline-success my-2 my-sm-0 botonNavBar" type="submit">Buscar</button>
-          </form>
-    </div>
-</nav>         
-   
-<div class="row">
-   <div class="muro col-sm-8 offset-1">                  
-      <main class="noticias">
-                                     
-                    <div class="divNoticias">
-                        <img src="imagenes/iconoPerfil.jpg">                                      
-                         <a href="nuevoPerfil.html">María Carolina</a>
-                         <hr>
-                         <div id="post" >
-                         <post ><img src="imagenes/frase01.jpg"></post>
-                         </div>
-                             <div id="iconos">
-                              <button id="meGusta" type="button" name="button"><img class="botonmegusta" src="imagenes/megusta.png"></button>                                            
-                  
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div>
-                                      </div>  
-                                    </div>  
-                                          <!--Aca termina  ventana emergente para comentar-->  
+<body>
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-light margenNavBar footer">
+		<div class="collapse navbar-collapse footer" id="navbarTogglerDemo01">
+			<a class="navbar-brand" href="index"><img class="navbar-brand"
+				src="imagenes\LogoBaproClub.jpg"></abbr></a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+			<form class="form-inline my-2 my-lg-0 ">
+				<a href="nuevoPerfil.html"><img src="imagenes/iconoPerfil.jpg"
+					style="width: 35px; height: 30px;"></a> <input
+					class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos"
+					placeholder="Persones / Amigues" aria-label="fotos/personas/grupos">
+				<button class="btn btn-outline-success my-2 my-sm-0 botonNavBar"
+					type="submit">Buscar</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="row">
+		<div class="muro col-sm-8 offset-1">
+			<main class="noticias">
+
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a
+						href="nuevoPerfil.html">María Carolina</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase01.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<img class="botonmegusta" src="imagenes/megusta.png">
+						</button>
+
+
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<div class="comentarios">
+						<div>
+							<div>
+								<a href="nuevoPerfil.html">María Carolina</a><span
+									style="margin: 10px; font-size: small;">Que linda foto!</span>
+								<button class="eliminarEditarComentarios">...</button>
+							</div>
+
+						</div>
+						<div>
+							<div>
+								<a href="nuevoPerfil.html">Julian Suarez</a><span
+									style="margin: 10px; font-size: small;">Buenas
+									vacaciones!</span>
+								<button class="eliminarEditarComentarios">...</button>
+							</div>
+
+						</div>
+						<div>
+							<div>
+								<a href="nuevoPerfil.html">Juanita Jo</a><span
+									style="margin: 10px; font-size: small;">Besos!</span>
+								<button class="eliminarEditarComentarios">...</button>
+							</div>
+
+						</div>
+						<div>
+							<div>
+								<a href="nuevoPerfil.html">Mateo RH</a><span
+									style="margin: 10px; font-size: small;">Que bueno!</span>
+								<button class="eliminarEditarComentarios">...</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
 
 
 
 
 
-                                     
-                                   
-                                    <div  class="divNoticias">
-                                        <img src="imagenes/iconoPerfil.jpg">
-                                       
-                                        <a href="perfil"> Fulana Del Campo</a>
-                                        <hr>
-                                          <div id="post" >
-                                            <post ><img src="imagenes/frase02.jpg"></post>
-                                          </div>
-                                          <div id="iconos">
-                                            <button id="meGusta" type="button" name="button"><img class="botonmegusta" src="imagenes/megusta.png"></button>
-
-                                    
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div> 
-                                       </div> 
-                                    </div>
-                                          <!--Aca termina  ventana emergente para comentar-->  
-
-                        
-                                      <div  class="divNoticias">
-                                          <img src="imagenes/iconoPerfil.jpg">
-                                         
-                                          <a href="#"> Carlos Vengador</a>
-                                          <hr>
-                                            <div id="post" >
-                                              <post ><img src="imagenes/frase03.jpg"></post>
-                                            </div>
-                                            <div id="iconos">
-                                              <button id="meGusta" type="button" name="button"><img class="botonmegusta" src="imagenes/megusta.png"></button>
-
-                                     
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div>
-                                      </div>  
-                                    </div>  
-                                          <!--Aca termina  ventana emergente para comentar-->  
 
 
-                        
-                                        <div  class="divNoticias">
-                                            <img src="imagenes/iconoPerfil.jpg">
-                                            
-                                            <a href="#">Karina Katrina</a>
-                                            <hr>
-                                              <div id="post" >
-                                                <post ><img src="imagenes/frase04.jpg"></post>
-                                              </div>
-                                              <div id="iconos">
-                                                <button id="meGusta" type="button" name="button"><img class="botonmegusta" src="imagenes/megusta.png"></button>
-
-                                                  
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div>
-                                      </div>  
-                                    </div>  
-                                          <!--Aca termina  ventana emergente para comentar-->  
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a href="perfil">
+						Fulana Del Campo</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase02.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<img class="botonmegusta" src="imagenes/megusta.png">
+						</button>
 
 
-                        
-                                          <div  class="divNoticias">
-                                              <img src="imagenes/iconoPerfil.jpg">                                             
-                                              <a href="#"> Malvina Malvada</a>
-                                              <hr>
-                                                <div id="post" >
-                                                  <post ><img src="imagenes/frase05.jpg"></post>
-                                                </div>
-                                                <div id="iconos">
-                                                  <button id="meGusta" type="button" name="button"><img class="botonmegusta" src="imagenes/megusta.png"></button>
 
-                                                    
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div>
-                                      </div>  
-                                    </div>  
-                                          <!--Aca termina  ventana emergente para comentar-->  
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
 
 
-                        
-                                            <div  class="divNoticias">
-                                                <img src="imagenes/iconoPerfil.jpg">
-                                                
-                                                <a href="#">Esteban Tigre</a>
-                                                <hr>
-                                                  <div id="post" >
-                                                    <post ><img src="imagenes/frase06.jpg"></post>
-                                                  </div>
-                                                  <div id="iconos">
-                                                    <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png"></abbr></button>
-
-                                        
-                                         <!--Aca empieza boton de comentar emergente-->  
-                                        <button type="button" class="button" data-toggle="modal" data-target="#comentarModal" ><img src="imagenes/dialogo.png"></button>                                       
-                                        <div class="modal fade emergenteDivRompeBolas" id="comentarModal" tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel" aria-hidden="true">                        
-                                            <div class="modal-dialog emergenteDivRompeBolas ">
-                                                <div class="modal-content emergenteDivRompeBolas ">
-                                                <textarea class="emergenteMail" id="message-text" placeholder="Usuario o email..." ></textarea>
-                                                <br>
-                                                <textarea class="emergenteComentar" id="message-text" placeholder="Comenta ésta Publicación..." ></textarea>
-                                                 <br>                              
-                                                <button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-                                                <button type="button" data-dismiss="modal" 
-                                                class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-                                               </div>
-                                          
-                                           </div>
-                                       </div>
-                                      </div>  
-                                    </div>  
-                                          <!--Aca termina  ventana emergente para comentar-->  
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a href="#"> Carlos
+						Vengador</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase03.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<img class="botonmegusta" src="imagenes/megusta.png">
+						</button>
 
 
-                        
-                                </main>
+
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
 
 
-            </div>
-                            
 
-              <!--
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a href="#">Karina
+						Katrina</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase04.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<img class="botonmegusta" src="imagenes/megusta.png">
+						</button>
+
+
+
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
+
+
+
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a href="#"> Malvina
+						Malvada</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase05.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<img class="botonmegusta" src="imagenes/megusta.png">
+						</button>
+
+
+
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
+
+
+
+				<div class="divNoticias">
+					<img src="imagenes/iconoPerfil.jpg"> <a href="#">Esteban
+						Tigre</a>
+					<hr>
+					<div id="post">
+						<post>
+						<img src="imagenes/frase06.jpg"></post>
+					</div>
+					<div id="iconos">
+						<button id="meGusta" type="button" name="button">
+							<abbr title="amé"></abbr><img class="botonmegusta"
+								src="imagenes/megusta.png"></abbr>
+						</button>
+
+
+						<!--Aca empieza boton de comentar emergente-->
+						<button type="button" class="button" data-toggle="modal"
+							data-target="#comentarModal">
+							<img src="imagenes/dialogo.png">
+						</button>
+						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
+							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog emergenteDivRompeBolas ">
+								<div class="modal-content emergenteDivRompeBolas ">
+									<textarea class="emergenteMail" id="message-text"
+										placeholder="Usuario o email..."></textarea>
+									<br>
+									<textarea class="emergenteComentar" id="message-text"
+										placeholder="Comenta ésta Publicación..."></textarea>
+									<br>
+									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
+									<button type="button" data-dismiss="modal"
+										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Aca termina  ventana emergente para comentar-->
+
+
+
+			</main>
+
+
+		</div>
+
+
+		<!--
 
             <div class="notificaciones col-sm-2">
                 <hr>
@@ -323,176 +431,260 @@
             </div>
                   -->
 
-                 
 
-            <div class="chat ">
-              
-                    <div id="chat">
-           
-                            <h6>  Mis Amigos</h6>
-                      </div> 
-                      
-                      <div id="chat">
-                         
-                          <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                          <div class="personaChat2 "><a href="nuevoPerfil.html">María Carolina</a></div> 
-                      
-                    </div> 
-              
-                    <div id="chat">
-                         
-                        <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                        <div class="personaChat2"><a href="perfil.html">Fulana Del Campo</a></div> 
-                    
-                  </div> 
-                  
-                  <div id="chat">
-                     
-                      <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                      <div class="personaChat2"><a href="#">Mariana Gonzalez</a></div> 
-                  
-                </div>
-              
-                <div id="chat">
-                         
-                    <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                    <div class="personaChat2"><a href="#">Carlos Vengador</a></div> 
-                
-              </div> 
-              
-              <div id="chat">
-                 
-                  <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                  <div class="personaChat2"><a href="#">Esteban Etche</a></div> 
-              
-              </div>
-              <div id="chat">
-                         
-                  <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                  <div class="personaChat2"><a href="#">Malvina Malvada</a></div> 
-              
-              </div> 
-              
-              <div id="chat">
-               
-                <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                <div class="personaChat2"><a href="#">Susanita Lopez</a></div> 
-              
-              </div> 
-              
-              <div id="chat">
-               
-              <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-              <div class="personaChat2"><a href="#">Karina Katrina</a></div> 
-              
-              </div> 
-              
-              <div id="chat">
-               
-              <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-              <div class="personaChat2"><a href="#">Esteban Tigre</a></div> 
-              
-              </div> 
-              
-              <div id="chat">
-              
-              <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-              <div class="personaChat2"><a href="#">Mario Bravo</a></div> 
-              
-              </div>
-              <div id="chat">
-              
-                  <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                  <div class="personaChat2"><a href="#">Nicanor Aragán</a></div> 
-                  
-                  </div>
-                  
-                  <div id="chat">
-                   
-                  <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                  <div class="personaChat2"><a href="#">Molly Lopez</a></div> 
-                  
-                  </div> 
-                  
-                  <div id="chat">
-                  
-                  <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                  <div class="personaChat2"><a href="#">Maia Perruna</a></div> 
-                  
-                  </div>
-                  <div id="chat">
-                  
-                      <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                      <div class="personaChat2"><a href="#">Toto Poroto</a></div> 
-                      
-                      </div>
-                      <div id="chat">
-              
-                        <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                        <div class="personaChat2"><a href="#">Mario Bravo</a></div> 
-                        
-                        </div>
-                        <div id="chat">
-                        
-                            <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                            <div class="personaChat2"><a href="#">Nicanor Aragán</a></div> 
-                            
-                            </div>
-                            
-                            <div id="chat">
-                             
-                            <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                            <div class="personaChat2"><a href="#">Molly Lopez</a></div> 
-                            
-                            </div> 
-                            
-                            <div id="chat">
-                            
-                            <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                            <div class="personaChat2"><a href="#">Maia Perruna</a></div> 
-                            
-                            </div>
-                            <div id="chat">
-                            
-                                <div class="personaChat"><img src="imagenes/iconoPerfil.jpg"></div>
-                                <div class="personaChat2"><a href="#">Toto Poroto</a></div> 
-                                
-                                </div>
-                      
-              
-                  </div>
-            </div>
-            <footer>
-              <div class="row content ">                 
-                 <nav class="pie ">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-                     <ul class="navbar-nav ">                           
-                         <li class="nav-item">
-                         <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Desarrolladores</a>
-                         </li>
-                         <li class="nav-item active">
-                         <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Reglas de Uso </a>
-                         </li>
-                         <li class="nav-item">
-                         <a class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Privacidad</a>
-                         </li>
-                         <li class="nav-item">
-                         <a class="nav-link footerYBarraSupGeneral hoverOrange" href="faq">Preguntas Frecuentes</a>
-                         </li>
-                         <li class="nav-item">
-                         <a class="nav-link footerYBarraSupGeneral hoverOrange" href="contacto">Contacto</a>
-                         </li>
-                       </ul>
-                    </nav>
-                  </nav>                    
-              </div>
-          </footer>
-              
 
-     </div>
-     <script src="js/Mi Muro.js"></script>
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   </body>  
-</html>       
+		<div class="chat ">
+
+			<div id="chat">
+
+				<h6>Mis Amigos</h6>
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2 ">
+					<a href="nuevoPerfil.html">María Carolina</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="perfil.html">Fulana Del Campo</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Mariana Gonzalez</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Carlos Vengador</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Esteban Etche</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Malvina Malvada</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Susanita Lopez</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Karina Katrina</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Esteban Tigre</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Mario Bravo</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Nicanor Aragán</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Molly Lopez</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Maia Perruna</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Toto Poroto</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Mario Bravo</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Nicanor Aragán</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Molly Lopez</a>
+				</div>
+
+			</div>
+
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Maia Perruna</a>
+				</div>
+
+			</div>
+			<div id="chat">
+
+				<div class="personaChat">
+					<img src="imagenes/iconoPerfil.jpg">
+				</div>
+				<div class="personaChat2">
+					<a href="#">Toto Poroto</a>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+	<footer>
+		<div class="row content ">
+			<nav class="pie ">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+					<ul class="navbar-nav ">
+						<li class="nav-item"><a
+							class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Desarrolladores</a>
+						</li>
+						<li class="nav-item active"><a
+							class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Reglas
+								de Uso </a></li>
+						<li class="nav-item"><a
+							class="nav-link footerYBarraSupGeneral hoverOrange" href="#">Privacidad</a>
+						</li>
+						<li class="nav-item"><a
+							class="nav-link footerYBarraSupGeneral hoverOrange" href="faq">Preguntas
+								Frecuentes</a></li>
+						<li class="nav-item"><a
+							class="nav-link footerYBarraSupGeneral hoverOrange"
+							href="contacto">Contacto</a></li>
+					</ul>
+				</nav>
+			</nav>
+		</div>
+	</footer>
+
+
+	</div>
+	<script src="js/Mi Muro.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

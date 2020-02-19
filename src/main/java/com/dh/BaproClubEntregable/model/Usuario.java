@@ -13,54 +13,44 @@ import javax.persistence.Table;
 public class Usuario {
 	
 
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
 	private Integer id;
 	
 	@Column(unique=true, nullable=false)
-	private String nick;
 	private String nombre;
 	private String apellido;
 	@Column( nullable=false)
 	private Date fechaDeNacimiento;
 	@Column(unique=true, nullable=false)
+	private String lugarDeNacimiento;
+	@Column(unique=true, nullable=false)
 	private String email;
 	@Column( nullable=false)
-	private Integer sucursal;
-	@Column( nullable=false)
 	private String contrasenia;
+	@Column( nullable=false)
+	private String resenia;
 	
-	private String descripcion;
-	
+	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String lugarDeNacimiento, String email,
+			String contrasenia, String resenia) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.fechaDeNacimiento = fechaDeNacimiento;
+		this.lugarDeNacimiento = lugarDeNacimiento;
+		this.email = email;
+		this.contrasenia = contrasenia;
+		this.resenia = resenia;
+	}
+
 	
 	public Usuario() {
 		super();
 	}
 
 	
-	public Usuario(String nick, String nombre, String apellido, Date fechaDeNacimiento, String email,
-			Integer sucursal, String contrasenia, String descripcion) {
-		this.nick = nick;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.fechaDeNacimiento = fechaDeNacimiento;
-		this.email = email;
-		this.sucursal = sucursal;
-		this.contrasenia = contrasenia;
-		
-		this.descripcion = descripcion;
-	}
-
-
-	public String getNick() {
-		return nick;
-	}
-
-
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
+	
 
 	public String getNombre() {
 		return nombre;
@@ -102,16 +92,6 @@ public class Usuario {
 	}
 
 
-	public Integer getSucursal() {
-		return sucursal;
-	}
-
-
-	public void setSucursal(Integer sucursal) {
-		this.sucursal = sucursal;
-	}
-
-
 	public String getContrasenia() {
 		return contrasenia;
 	}
@@ -123,12 +103,37 @@ public class Usuario {
 
 
 	public String getDescripcion() {
-		return descripcion;
+		return resenia;
 	}
 
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+		this.resenia = descripcion;
+	}
+
+
+	public String getLugarDeNacimiento() {
+		return lugarDeNacimiento;
+	}
+
+
+	public void setLugarDeNacimiento(String lugarDeNacimiento) {
+		this.lugarDeNacimiento = lugarDeNacimiento;
+	}
+
+
+	public String getResenia() {
+		return resenia;
+	}
+
+
+	public void setResenia(String resenia) {
+		this.resenia = resenia;
+	}
+
+
+	public Integer getId() {
+		return id;
 	}
 	
 	

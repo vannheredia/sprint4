@@ -396,7 +396,7 @@ width:100%;
     margin: 20px;
     box-sizing: border-box 100px;
     width:360px;
-    height: 400px;
+    height: 500px !important;
     float:left;
     margin-left:2%;
     box-sizing:border-box;
@@ -417,6 +417,16 @@ width:100%;
       padding: 5px;
   }
   
+    .comentarios{
+    border: #9AC00F 1px solid;
+    overflow-y: scroll;
+    height: 110px;
+    background-color: whitesmoke!important;
+  }
+  .eliminarEditarComentarios{
+    border: none;
+    float: right;
+  }
 
   @media(max-width: 360px){
    .noticias div{
