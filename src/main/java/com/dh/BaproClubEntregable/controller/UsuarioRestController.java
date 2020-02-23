@@ -49,6 +49,15 @@ public class UsuarioRestController {
 	
 	//Editar Usuario
 	
+	@GetMapping("/registro")
+	public String getFormularioRegistro() {
+		return "registro";
+	}
 	
+	@PostMapping("/registro")
+	public String guardarUsuario(Usuario unUsuario) {
+		this.usuarioJpaRepository.save(unUsuario);
+		return "registro-exitoso";
+	}
 
 }

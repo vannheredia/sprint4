@@ -21,7 +21,7 @@ public class Usuario {
 	@Column(unique=true, nullable=false)
 	private String nombre;
 	private String apellido;
-	@Column( nullable=false)
+	@Column(nullable=false)
 	private Date fechaDeNacimiento;
 	@Column(unique=true, nullable=false)
 	private String lugarDeNacimiento;

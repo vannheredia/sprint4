@@ -11,11 +11,6 @@ public class HomeController {
 	return "index";
 	}
 
-	@GetMapping("/registro")
-	public String getRegistro() {
-	return "registro";
-	}
-
 	@GetMapping("/MiMuro")
 	public String getMiMuro() {
 	return "MiMuro";
