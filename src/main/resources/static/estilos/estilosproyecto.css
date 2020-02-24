@@ -388,6 +388,13 @@ width:100%;
 
 }
 
+.textareaComentarios{
+	width: 200px;
+	height: 50px;
+	border: border: #9AC00F 1px solid;
+
+	}
+
   .noticias .divNoticias {    
 
     background-color: whitesmoke!important;
