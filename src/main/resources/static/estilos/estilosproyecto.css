@@ -396,7 +396,7 @@ width:100%;
     margin: 20px;
     box-sizing: border-box 100px;
     width:360px;
-    height: 500px !important;
+    height: 550px !important;
     float:left;
     margin-left:2%;
     box-sizing:border-box;
@@ -420,7 +420,7 @@ width:100%;
     .comentarios{
     border: #9AC00F 1px solid;
     overflow-y: scroll;
-    height: 110px;
+    height: 65px;
     background-color: whitesmoke!important;
   }
   .eliminarEditarComentarios{
