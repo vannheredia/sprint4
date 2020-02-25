@@ -2,6 +2,9 @@ package com.dh.BaproClubEntregable.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.dh.BaproClubEntregable.model.Usuario;
 
 @Controller
 public class HomeController {
@@ -16,6 +19,12 @@ public class HomeController {
 	return "MiMuro";
 	}
 
+	@PostMapping("login")
+	public String login(Usuario usr) {
+	return "nuevoPerfil";
+	}
+
+	
 	@GetMapping("/contacto")
 	public String getContacto() {
 	return "contacto";
