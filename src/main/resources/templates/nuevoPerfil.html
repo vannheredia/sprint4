@@ -28,8 +28,8 @@
         <img src="imagenes\dandelion.jpg" class="imagenDePortada" alt="">
     </header>
     <div class="divDeImagenDePerfil"><img   src="imagenes\persona.jpg" class="imagenDePerfilNueva" alt=""></div>
-    <p class="datosPersonales"> Maria Carolina <br> Sucursal 4009</p>
-    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p class="datosPersonales" th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
+    <p class="bio" th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 
     <main class="mainPerfilNuevo"> 
 
