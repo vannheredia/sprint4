@@ -10,5 +10,5 @@ import com.dh.BaproClubEntregable.model.Usuario;
 public interface UsuarioJpaRepository extends JpaRepository<Usuario, Integer>{
 	@Query("SELECT u FROM Usuario u WHERE u.email = ?1")
 	Usuario findUserByMail(String Mail);
-	
+			
 }

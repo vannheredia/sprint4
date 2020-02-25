@@ -18,12 +18,12 @@ public class Usuario {
 	@Id	
 	private Integer id;
 	
-	@Column(unique=true, nullable=false)
+	@Column(nullable=false)
 	private String nombre;
 	private String apellido;
 	@Column(nullable=false)
 	private Date fechaDeNacimiento;
-	@Column(unique=true, nullable=false)
+	@Column(nullable=false)
 	private String lugarDeNacimiento;
 	@Column(unique=true, nullable=false)
 	private String email;

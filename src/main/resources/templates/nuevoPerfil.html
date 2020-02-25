@@ -25,7 +25,7 @@
         </nav>
 
     <header class="headerDePerfil">
-        <img src="imagenes\dandelion.jpg" class="imagenDePortada" alt="">
+        <img th:src="${usuario.urlFotoPortada}" class="imagenDePortada" alt="">
     </header>
     <div class="divDeImagenDePerfil"><img  th:src="${usuario.urlFotoPerfil}" class="imagenDePerfilNueva" alt=""></div>
     <p class="datosPersonales" th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
