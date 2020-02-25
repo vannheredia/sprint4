@@ -28,8 +28,8 @@
         <img th:src="${usuario.urlFotoPortada}" class="imagenDePortada" alt="">
     </header>
     <div class="divDeImagenDePerfil"><img  th:src="${usuario.urlFotoPerfil}" class="imagenDePerfilNueva" alt=""></div>
-    <p class="datosPersonales" th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
-    <p class="bio" th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p class="datosPersonales" style=font-size:40px  th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
+    <p class="bio" style=font-size:30px  th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 
     <main class="mainPerfilNuevo"> 
     
@@ -47,7 +47,7 @@
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
-  <span th:text = "${publicacion.tipoDePosteo}"></span>
+  <span style=font-size:18px  th:text = "${publicacion.tipoDePosteo}"></span>
   <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
   </div>
   
