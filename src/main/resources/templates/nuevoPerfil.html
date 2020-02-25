@@ -27,7 +27,7 @@
     <header class="headerDePerfil">
         <img src="imagenes\dandelion.jpg" class="imagenDePortada" alt="">
     </header>
-    <div class="divDeImagenDePerfil"><img   src="imagenes\persona.jpg" class="imagenDePerfilNueva" alt=""></div>
+    <div class="divDeImagenDePerfil"><img  th:src="${usuario.urlFotoPerfil}" class="imagenDePerfilNueva" alt=""></div>
     <p class="datosPersonales" th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
     <p class="bio" th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 

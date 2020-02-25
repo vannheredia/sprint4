@@ -31,6 +31,8 @@ public class Usuario {
 	private String contrasenia;
 	@Column( nullable=false)
 	private String resenia;
+	private String urlFotoPerfil;
+	private String urlFotoPortada; 
 	
 	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String lugarDeNacimiento, String email,
 			String contrasenia, String resenia) {
@@ -134,6 +136,26 @@ public class Usuario {
 
 	public Integer getId() {
 		return id;
+	}
+
+
+	public String getUrlFotoPerfil() {
+		return urlFotoPerfil;
+	}
+
+
+	public void setUrlFotoPerfil(String urlFotoPerfil) {
+		this.urlFotoPerfil = urlFotoPerfil;
+	}
+
+
+	public String getUrlFotoPortada() {
+		return urlFotoPortada;
+	}
+
+
+	public void setUrlFotoPortada(String urlFotoPortada) {
+		this.urlFotoPortada = urlFotoPortada;
 	}
 	
 	
