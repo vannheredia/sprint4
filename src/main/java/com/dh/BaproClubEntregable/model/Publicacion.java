@@ -23,10 +23,15 @@ public class Publicacion {
 	private Date fecha;
 	//private List<Usuario> corazones;
 	private String tipoDePosteo;
+	private String imagenDePosteo;
 	
 	public Publicacion(Integer id_perfil) {
 		this.idCuenta = id_perfil;
 		this.fecha = new Date(0);
+	}
+	
+	public Publicacion() {
+		this.fecha = new Date(0); 
 	}
 
 	public Integer getIdPerfil() {
@@ -59,6 +64,14 @@ public class Publicacion {
 
 	public void setTipoDePosteo(String tipoDePosteo) {
 		this.tipoDePosteo = tipoDePosteo;
+	}
+
+	public String getImagenDePosteo() {
+		return imagenDePosteo;
+	}
+
+	public void setImagenDePosteo(String imagenDePosteo) {
+		this.imagenDePosteo = imagenDePosteo;
 	}
 	
 	

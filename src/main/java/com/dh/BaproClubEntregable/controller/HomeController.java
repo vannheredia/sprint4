@@ -1,5 +1,7 @@
 package com.dh.BaproClubEntregable.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.model.Usuario;
+import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
 @Controller
@@ -15,6 +19,8 @@ public class HomeController {
 	
 	@Autowired 
 	private UsuarioJpaRepository usuarioJpaRepository;
+	@Autowired 
+	private PublicacionJpaRepository publicacionJpaRepository;
 
 	@GetMapping("index") //index es igual a comillas vacias
 	public String getIndex() {
@@ -30,6 +36,10 @@ public class HomeController {
 	public String login(Usuario usr , Model model) {
 	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
 	model.addAttribute("usuario", usrLogueado);	
+	
+	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
+	model.addAttribute("publicaciones", publicaciones);
+	
 	return "nuevoPerfil";
 	}
 	

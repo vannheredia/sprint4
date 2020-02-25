@@ -32,12 +32,27 @@
     <p class="bio" th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 
     <main class="mainPerfilNuevo"> 
-
-<div class="posteosPerfilNuevo">
+    
+    
+<!--  prueba posteos de texto con li  
+<ul  th:each = "publicacion: ${publicaciones}">
+	<li th:text = "${publicacion.tipoDePosteo}">
+	<div class="posteosPerfilNuevo">
   <img class="posteosDePerfil" src="imagenes\perfil01.jpg" alt="">
-  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>
-  
+  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
+  </div>	
+	</li>
+</ul>
+-->
+
+<div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
+  <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
+  <span th:text = "${publicacion.tipoDePosteo}"></span>
+  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
   </div>
+  
+  
+ <!--  dejo comentados los posteos de maqueta 
 <div class="posteosPerfilNuevo">
   <img class="posteosDePerfil" src="imagenes\perfil02.jpg" alt="">
   <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>
@@ -70,6 +85,8 @@
   <img class="posteosDePerfil" src="imagenes\perfil03.jpg" alt="">
   <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png"></abbr></button>
 </div>
+--> 
+
   
   </main>
 
