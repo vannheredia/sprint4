@@ -34,16 +34,32 @@ public class HomeController {
 
 	@PostMapping("/login")
 	public String login(Usuario usr , Model model) {
-	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
-	model.addAttribute("usuario", usrLogueado);	
 	
+		
+	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
 	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
+	
 	model.addAttribute("publicaciones", publicaciones);
+	model.addAttribute("usuario", usrLogueado);	
 	
 	return "nuevoPerfil";
 	}
 	
 
+	@PostMapping("/buscamiamigo")
+	public String buscamiamigo(Usuario usr , Model model) {
+	
+		
+	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
+	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
+	
+	model.addAttribute("publicaciones", publicaciones);
+	model.addAttribute("usuario", usrLogueado);	
+	
+	return "nuevoPerfil";
+	}
+	
+	
 	
 	@GetMapping("/contacto")
 	public String getContacto() {
@@ -51,8 +67,14 @@ public class HomeController {
 	}
 	
 	@GetMapping("/perfil")
-	public String getPerfil() {
-	return "nuevoPerfil";
+	public String getPerfil(Model model) {
+	
+		Usuario usrLogueado = usuarioJpaRepository.findUserByMail("adalovelace@gmail.com");
+		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
+		
+		model.addAttribute("publicaciones", publicaciones);
+		model.addAttribute("usuario", usrLogueado);	
+		return "nuevoPerfil";
 	}
 	
 	@GetMapping("/faq")
