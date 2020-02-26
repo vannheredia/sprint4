@@ -62,6 +62,11 @@ public class HomeController {
 	}
 	
 	
+	@GetMapping("/uploadFile")     //prueba de boton para subir imagenes desde pc
+		public String renderizarUploadFile() {
+		return "uploadFile";
+	}
+	
 	
 	@GetMapping("/contacto")
 	public String getContacto() {
