@@ -50,7 +50,7 @@
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
-  <span style=font-size:18px  th:text = "${publicacion.tipoDePosteo}"></span>
+  <span style=font-size:18px  th:text = "${publicacion.texto}"></span>
   <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
   </div>
   

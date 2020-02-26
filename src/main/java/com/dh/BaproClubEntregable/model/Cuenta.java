@@ -22,15 +22,15 @@ public class Cuenta {
 	
 	@OneToOne
 	@JoinColumn(nullable=false, name="id_usuario")
-	private Usuario Usuario;
+	private Usuario usuario;
 	
 	@OneToMany(mappedBy = "unaCuenta")
 	private List<Publicacion> publicacionesDelUsuario;
 	
 	
-	public Cuenta(Usuario unUsuario, List<Publicacion> publicacionesDelUsuario) {
+	public Cuenta(Usuario usuario, List<Publicacion> publicacionesDelUsuario) {
 		super();
-		this.Usuario = unUsuario;
+		this.usuario = usuario;
 		//this.publicacionesDelUsuario = publicacionesDelUsuario;
 	}
 	public Cuenta() {
@@ -38,10 +38,10 @@ public class Cuenta {
 	}
 
 	public Usuario getUnUsuario() {
-		return Usuario;
+		return usuario;
 	}
 	public void setUnUsuario(Usuario unUsuario) {
-		this.Usuario = unUsuario;
+		this.usuario = unUsuario;
 	}
 	//public List<Publicacion> getPublicacionesDelUsuario() {
 		//return publicacionesDelUsuario;

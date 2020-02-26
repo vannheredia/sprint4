@@ -10,7 +10,7 @@ import com.sun.xml.bind.v2.model.core.ID;
 
 public interface PublicacionJpaRepository extends JpaRepository<Publicacion, Integer> {
 	
-	//@Query ("SELECT p from Publicacion p inner join Cuenta c on p.idunaCuentaId = c.id where c.Usuario.id = ?1")
-	@Query ("SELECT p from Publicacion p  ")
+	@Query ("SELECT p from Publicacion p inner join Cuenta c on p.unaCuenta = c.id where c.usuario.id = ?1")
+	//@Query ("SELECT p from Publicacion p  ")
 	List<Publicacion> findByUserId(Integer Id); 
 }

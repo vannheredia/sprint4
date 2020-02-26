@@ -73,13 +73,13 @@
 			
 			
 
-				<div class="divNoticias">
+				<div th:each="pub : ${publicaciones}" class="divNoticias">
 					<img src="imagenes/iconoPerfil.jpg"> <a
-						href="nuevoPerfil.html">María Carolina</a>
+						href="nuevoPerfil.html" th:text="${pub.unaCuenta}"></a>
 					<hr>
 					<div id="post">
 						<post>
-						<img src="imagenes/frase01.jpg"></post>
+						<img th:src="${pub.imagenDePosteo}"></post>
 					</div>
 					<div id="iconos">
 						<button id="meGusta" type="button" name="button">
@@ -147,90 +147,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--Aca termina  ventana emergente para comentar-->
-
-
-
-
-
-
-
-				<div class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a href="perfil">
-						Fulana Del Campo</a>
-					<hr>
-					<div id="post">
-						<post>
-						<img src="imagenes/frase02.jpg"></post>
-					</div>
-					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
-							<img class="botonmegusta" src="imagenes/megusta.png">
-						</button>
-
-
-
-						<!--Aca empieza boton de comentar emergente-->
-						<button type="button" class="button" data-toggle="modal"
-							data-target="#comentarModal">
-							<img src="imagenes/dialogo.png">
-						</button>
-						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
-							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog emergenteDivRompeBolas ">
-								<div class="modal-content emergenteDivRompeBolas ">
-									<textarea class="emergenteMail" id="message-text"
-										placeholder="Usuario o email..."></textarea>
-									<br>
-									<textarea class="emergenteComentar" id="message-text"
-										placeholder="Comenta ésta Publicación..."></textarea>
-									<br>
-									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-									<button type="button" data-dismiss="modal"
-										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
-	
-	<div class="comentarios">
-						<div>
-							<div>
-								<a href="nuevoPerfil.html">María Carolina</a><span
-									style="margin: 10px; font-size: small;">Que linda foto!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-
-						</div>
-						<div>
-							<div>
-								<a href="nuevoPerfil.html">Julian Suarez</a><span
-									style="margin: 10px; font-size: small;">Buenas
-									vacaciones!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-
-						</div>
-						<div>
-							<div>
-								<a href="nuevoPerfil.html">Juanita Jo</a><span
-									style="margin: 10px; font-size: small;">Besos!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-
-						</div>
-						<div>
-							<div>
-								<a href="nuevoPerfil.html">Mateo RH</a><span
-									style="margin: 10px; font-size: small;">Que bueno!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-						</div>
-					</div>
-					
 					<div>
 						<form action="" method="post">
 							<textarea rows="" cols="" name="comentario" placeholder="Deja tu comentario"></textarea> 
@@ -238,185 +154,11 @@
 						</form> 
 					</div>
 				</div>
-	
-	
-				<!--Aca termina  ventana emergente para comentar-->
-
-
-				<div class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a href="#"> Carlos
-						Vengador</a>
-					<hr>
-					<div id="post">
-						<post>
-						<img src="imagenes/frase03.jpg"></post>
-					</div>
-					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
-							<img class="botonmegusta" src="imagenes/megusta.png">
-						</button>
-
-
-
-						<!--Aca empieza boton de comentar emergente-->
-						<button type="button" class="button" data-toggle="modal"
-							data-target="#comentarModal">
-							<img src="imagenes/dialogo.png">
-						</button>
-						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
-							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog emergenteDivRompeBolas ">
-								<div class="modal-content emergenteDivRompeBolas ">
-									<textarea class="emergenteMail" id="message-text"
-										placeholder="Usuario o email..."></textarea>
-									<br>
-									<textarea class="emergenteComentar" id="message-text"
-										placeholder="Comenta ésta Publicación..."></textarea>
-									<br>
-									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-									<button type="button" data-dismiss="modal"
-										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
 				<!--Aca termina  ventana emergente para comentar-->
 
 
 
-				<div class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a href="#">Karina
-						Katrina</a>
-					<hr>
-					<div id="post">
-						<post>
-						<img src="imagenes/frase04.jpg"></post>
-					</div>
-					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
-							<img class="botonmegusta" src="imagenes/megusta.png">
-						</button>
-
-
-
-						<!--Aca empieza boton de comentar emergente-->
-						<button type="button" class="button" data-toggle="modal"
-							data-target="#comentarModal">
-							<img src="imagenes/dialogo.png">
-						</button>
-						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
-							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog emergenteDivRompeBolas ">
-								<div class="modal-content emergenteDivRompeBolas ">
-									<textarea class="emergenteMail" id="message-text"
-										placeholder="Usuario o email..."></textarea>
-									<br>
-									<textarea class="emergenteComentar" id="message-text"
-										placeholder="Comenta ésta Publicación..."></textarea>
-									<br>
-									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-									<button type="button" data-dismiss="modal"
-										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Aca termina  ventana emergente para comentar-->
-
-
-
-				<div class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a href="#"> Malvina
-						Malvada</a>
-					<hr>
-					<div id="post">
-						<post>
-						<img src="imagenes/frase05.jpg"></post>
-					</div>
-					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
-							<img class="botonmegusta" src="imagenes/megusta.png">
-						</button>
-
-
-
-						<!--Aca empieza boton de comentar emergente-->
-						<button type="button" class="button" data-toggle="modal"
-							data-target="#comentarModal">
-							<img src="imagenes/dialogo.png">
-						</button>
-						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
-							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog emergenteDivRompeBolas ">
-								<div class="modal-content emergenteDivRompeBolas ">
-									<textarea class="emergenteMail" id="message-text"
-										placeholder="Usuario o email..."></textarea>
-									<br>
-									<textarea class="emergenteComentar" id="message-text"
-										placeholder="Comenta ésta Publicación..."></textarea>
-									<br>
-									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-									<button type="button" data-dismiss="modal"
-										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Aca termina  ventana emergente para comentar-->
-
-
-
-				<div class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a href="#">Esteban
-						Tigre</a>
-					<hr>
-					<div id="post">
-						<post>
-						<img src="imagenes/frase06.jpg"></post>
-					</div>
-					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
-							<abbr title="amé"></abbr><img class="botonmegusta"
-								src="imagenes/megusta.png"></abbr>
-						</button>
-
-
-						<!--Aca empieza boton de comentar emergente-->
-						<button type="button" class="button" data-toggle="modal"
-							data-target="#comentarModal">
-							<img src="imagenes/dialogo.png">
-						</button>
-						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
-							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog emergenteDivRompeBolas ">
-								<div class="modal-content emergenteDivRompeBolas ">
-									<textarea class="emergenteMail" id="message-text"
-										placeholder="Usuario o email..."></textarea>
-									<br>
-									<textarea class="emergenteComentar" id="message-text"
-										placeholder="Comenta ésta Publicación..."></textarea>
-									<br>
-									<button type="button" class="emergenteBtnEnviar botonesGeneral">Enviar</button>
-									<button type="button" data-dismiss="modal"
-										class="emergenteBtnCerrar botonesGeneral ">Cerrar</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Aca termina  ventana emergente para comentar-->
-
+				
 
 
 			</main>

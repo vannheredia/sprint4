@@ -21,9 +21,12 @@ public class PublicacionController {
 	private PublicacionJpaRepository publicacionJpaRepository;
 	
 	@GetMapping("subirPublicacion")
-		public String getMiMuro() {
+	public String getMiMuro(Model model) {
+		List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
+		model.addAttribute("publicaciones", publicacionesDelUsuario);
+
 		return "MiMuro";
-		}
+	}
 	
 	@PostMapping("subirPublicacion")
 	public String generarPublicacion(Publicacion unaPublicacion, Model model) {
