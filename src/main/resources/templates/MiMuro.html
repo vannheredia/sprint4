@@ -141,16 +141,16 @@
 
 						</div>
 						<div>
-							<div>
-								<a href="nuevoPerfil.html">Mateo RH</a><span
-									style="margin: 10px; font-size: 15px;">Que bueno!</span>
+							<div th:each="com : ${unaListaDeComentarios}">
+								<a href="nuevoPerfil.html">Mateo RH</a><p
+									style="margin: 10px; font-size: 15px;"th:src="${com.unComentario}">Que bueno!</p>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
 						</div>
 					</div>
 					<div style="margin-top: 10px">
-						<form action="" method="post">
-							<textarea rows="" cols="" name="comentario" placeholder="Deja tu comentario"></textarea> 
+						<form action="subirComentario" method="post">
+							<textarea rows="" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
 							<button type="submit"></button>				
 						</form> 
 					</div>

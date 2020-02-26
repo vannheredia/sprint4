@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,18 +15,20 @@ public class Comentario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
 	private Integer id;
+	
 	@Column
-	private String comentario;
-	private Integer idPublicacion;
+	private String unComentario;
+	@ManyToOne()
+	private Publicacion unaPublicacion;
 	
 
 	public Comentario() {
 		super();
 	}
-	public Comentario(String comentario, Integer idPublicacion) {
+	public Comentario(String comentario, Publicacion idPublicacion) {
 		super();
-		this.idPublicacion = idPublicacion;
-		this.comentario = comentario;
+		this.unaPublicacion = idPublicacion;
+		this.unComentario = comentario;
 	}
 	public Integer getId() {
 		return id;
@@ -33,17 +36,17 @@ public class Comentario {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getIdPublicacion() {
-		return idPublicacion;
+	public Publicacion getIdPublicacion() {
+		return unaPublicacion;
 	}
-	public void setIdPublicacion(Integer idPublicacion) {
-		this.idPublicacion = idPublicacion;
+	public void setIdPublicacion(Publicacion idPublicacion) {
+		this.unaPublicacion = idPublicacion;
 	}
 	public String getComentario() {
-		return comentario;
+		return unComentario;
 	}
 	public void setComentario(String comentario) {
-		this.comentario = comentario;
+		this.unComentario = comentario;
 	}
 	
 	

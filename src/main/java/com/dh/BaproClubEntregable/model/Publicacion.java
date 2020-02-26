@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,7 +27,8 @@ public class Publicacion {
 	//private List<Usuario> corazones;
 	private String texto;
 	private String imagenDePosteo;
-	//private List<Comentario> unaListadeComentarios;
+	@OneToMany(mappedBy="unaPublicacion")
+	private List<Comentario> unaListadeComentarios;
 	
 
 	public Publicacion() {
