@@ -81,8 +81,9 @@
 						<post>
 						<img th:src="${pub.imagenDePosteo}"></post>
 					</div>
+					<p th:text=${pub.texto} style="font-size: 15px"></p>
 					<div id="iconos">
-						<button id="meGusta" type="button" name="button">
+						  <button id="meGusta" type="button" name="button">
 							<img class="botonmegusta" src="imagenes/megusta.png">
 						</button>
 
@@ -117,7 +118,7 @@
 						<div>
 							<div>
 								<a href="nuevoPerfil.html">María Carolina</a><span
-									style="margin: 10px; font-size: small;">Que linda foto!</span>
+									style="margin: 10px; font-size: 15px;">Que linda foto!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
 
@@ -125,7 +126,7 @@
 						<div>
 							<div>
 								<a href="nuevoPerfil.html">Julian Suarez</a><span
-									style="margin: 10px; font-size: small;">Buenas
+									style="margin: 10px; font-size: 15px;">Buenas
 									vacaciones!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
@@ -134,7 +135,7 @@
 						<div>
 							<div>
 								<a href="nuevoPerfil.html">Juanita Jo</a><span
-									style="margin: 10px; font-size: small;">Besos!</span>
+									style="margin: 10px; font-size: 15px;">Besos!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
 
@@ -142,12 +143,12 @@
 						<div>
 							<div>
 								<a href="nuevoPerfil.html">Mateo RH</a><span
-									style="margin: 10px; font-size: small;">Que bueno!</span>
+									style="margin: 10px; font-size: 15px;">Que bueno!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
 						</div>
 					</div>
-					<div>
+					<div style="margin-top: 10px">
 						<form action="" method="post">
 							<textarea rows="" cols="" name="comentario" placeholder="Deja tu comentario"></textarea> 
 							<button type="submit"></button>				

@@ -392,6 +392,7 @@ width:100%;
 	width: 200px;
 	height: 50px;
 	border: border: #9AC00F 1px solid;
+	margin-top: 10px;
 
 	}
 
@@ -402,8 +403,8 @@ width:100%;
     padding: 10px;
     margin: 20px;
     box-sizing: border-box 100px;
-    width:360px;
-    height: 550px !important;
+    width:370px;
+    height: 580px !important;
     float:left;
     margin-left:2%;
     box-sizing:border-box;
