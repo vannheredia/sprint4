@@ -28,12 +28,12 @@ public class HomeController {
 	}
 
   /* 
-   * ya esta este Get en comentarioController. borramos para que no rompa todo
-   *  @GetMapping("/MiMuro")
+   * ya esta este Get en comentarioController. borramos para que no rompa todo*/
+     @GetMapping("/MiMuro")
 	public String getMiMuro() {
 	return "MiMuro";
 	}
-*/
+
 	@PostMapping("/login")
 	public String login(Usuario usr , Model model) {
 	

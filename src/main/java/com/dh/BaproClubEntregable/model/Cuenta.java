@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,7 +24,8 @@ public class Cuenta {
 	@JoinColumn(nullable=false, name="id_usuario")
 	private Usuario Usuario;
 	
-	//private List<Publicacion> publicacionesDelUsuario;
+	@OneToMany(mappedBy = "unaCuenta")
+	private List<Publicacion> publicacionesDelUsuario;
 	
 	
 	public Cuenta(Usuario unUsuario, List<Publicacion> publicacionesDelUsuario) {

@@ -62,8 +62,10 @@
 			<main class="noticias">
 			<div class="col-sm-12 " >
 			
-				<form action="">
-					<textarea rows="5" cols="8" placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+				<form action="subirPublicacion" method="post" >
+					<textarea name="texto" rows="5" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+					         
+  		
 					<button type="submit" class="btn btn-outline-success">Publicar</button>			
 				</form>
 			</div>	
@@ -230,7 +232,7 @@
 					</div>
 					
 					<div>
-						<form action="/MiMuro" method="POST">
+						<form action="" method="post">
 							<textarea rows="" cols="" name="comentario" placeholder="Deja tu comentario"></textarea> 
 							<button type="submit"></button>				
 						</form> 

@@ -14,7 +14,7 @@ import com.dh.BaproClubEntregable.model.Usuario;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
 @Controller
-public class UsuarioRestController {
+public class UsuarioController {
 	
 	@Autowired
 	private UsuarioJpaRepository usuarioJpaRepository;

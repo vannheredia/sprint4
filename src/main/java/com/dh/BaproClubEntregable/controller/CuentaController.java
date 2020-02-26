@@ -9,15 +9,12 @@ import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
 
 @RestController
-public class CuentaRestController {
+public class CuentaController {
 	
 	@Autowired
 	private CuentaJpaRepository cuentaJpaRepository;
 
-	public void publicacionNueva (Integer idUsuario) {
-		Publicacion unaPublicacion = new Publicacion(idUsuario);
-		
-	}	
+
 	
 	
 	

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import com.dh.BaproClubEntregable.repository.VinculosJpaRepository;
 
 @Controller
-public class VinculoRestController {
+public class VinculoController {
 	
 	@Autowired
 	private VinculosJpaRepository vinculosJpaRepository;

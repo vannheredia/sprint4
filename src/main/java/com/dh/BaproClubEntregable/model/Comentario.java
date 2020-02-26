@@ -14,14 +14,15 @@ public class Comentario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id	
 	private Integer id;
-	@Column(nullable=false)
-	private Integer idPublicacion;
+	@Column
 	private String comentario;
+	private Integer idPublicacion;
+	
 
 	public Comentario() {
 		super();
 	}
-	public Comentario(Integer idPublicacion, String comentario) {
+	public Comentario(String comentario, Integer idPublicacion) {
 		super();
 		this.idPublicacion = idPublicacion;
 		this.comentario = comentario;

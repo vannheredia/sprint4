@@ -18,11 +18,7 @@ public class ComentarioController {
 	@Autowired
 	private ComentarioJpaRepository comentarioJpaRepository;
 	
-	@GetMapping("/MiMuro")
-	public String getMiMuro() {
-	return "MiMuro";
-	}
-	
+
 	@PostMapping("/MiMuro")
 	public String generarComentario(Comentario unComentario) {
 		comentarioJpaRepository.save(unComentario);
