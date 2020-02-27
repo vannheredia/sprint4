@@ -39,20 +39,21 @@
 		</div>
 	</nav>
 
-	<div class="row">
+	<div class="row ">
 	
-		<div class="sm-2" style="margin-right: 60px ">
-		<p>Publicidad</p>
+		<div class="sm-2 "   style="margin-right: 60px"  >
+		<br>
+		<p style="margin-left:25px">Publicidad</p>
 			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<img alt="" src="imagenes\turismocity.jpg" style="width: 100%">
+			<a href="https://www.turismocity.com.ar/"><img alt="" src="imagenes\turismocity.jpg" style="width: 100%"></a>
 			</div>
 			
 			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<img alt="" src="imagenes\despegar.jpg" style="width: 100%">
+			<a href="https://www.despegar.com.ar/"><img alt="" src="imagenes\despegar.jpg" style="width: 100%"></a>
 			</div>
 			
 			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<img alt="" src="imagenes\booking.jpg" style="width: 100%">
+			<a href="https://www.booking.com/"><img alt="" src="imagenes\booking.jpg" style="width: 100%"></a>
 			</div>
 		
 		</div>
@@ -74,8 +75,8 @@
 			
 
 				<div th:each="pub : ${publicaciones}" class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a
-						href="nuevoPerfil.html" th:text="${pub.unaCuenta}"></a>
+					
+					<a href="nuevoPerfil.html" th:text="${pub.unaCuenta}"></a>
 					<hr>
 					<div id="post">
 						<post>
@@ -117,7 +118,7 @@
 					<div class="comentarios">
 						<div>
 							<div>
-								<a href="nuevoPerfil.html">María Carolina</a><span
+								<a href="nuevoPerfil.html"><span style="font-size:18px">María Carolina</span></a><span
 									style="margin: 10px; font-size: 15px;">Que linda foto!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
@@ -125,7 +126,7 @@
 						</div>
 						<div>
 							<div>
-								<a href="nuevoPerfil.html">Julian Suarez</a><span
+								<a href="nuevoPerfil.html"><span style="font-size:18px">Julian Suarez</span></a><span
 									style="margin: 10px; font-size: 15px;">Buenas
 									vacaciones!</span>
 								<button class="eliminarEditarComentarios">...</button>
@@ -134,7 +135,7 @@
 						</div>
 						<div>
 							<div>
-								<a href="nuevoPerfil.html">Juanita Jo</a><span
+								<a href="nuevoPerfil.html"><span style="font-size:18px">Juanita Jo</span></a><span
 									style="margin: 10px; font-size: 15px;">Besos!</span>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
@@ -142,7 +143,7 @@
 						</div>
 						<div>
 							<div th:each="com : ${unaListaDeComentarios}">
-								<a href="nuevoPerfil.html">Mateo RH</a><p
+								<a href="nuevoPerfil.html"><span style="font-size:18px">Mateo RH</span></a><p
 									style="margin: 10px; font-size: 15px;"th:src="${com.unComentario}">Que bueno!</p>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
@@ -150,8 +151,8 @@
 					</div>
 					<div style="margin-top: 10px">
 						<form action="subirComentario" method="post">
-							<textarea rows="" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
-							<button type="submit"></button>				
+							<textarea rows="1" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
+							<button action="" type="submit" class="botonesGeneral">Comentar</button>				
 						</form> 
 					</div>
 				</div>

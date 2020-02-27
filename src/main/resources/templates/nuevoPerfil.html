@@ -37,16 +37,6 @@
     <main class="mainPerfilNuevo"> 
     
     
-<!--  prueba posteos de texto con li  no funciona
-<ul  th:each = "publicacion: ${publicaciones}">
-	<li th:text = "${publicacion.tipoDePosteo}">
-	<div class="posteosPerfilNuevo">
-  <img class="posteosDePerfil" src="imagenes\perfil01.jpg" alt="">
-  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
-  </div>	
-	</li>
-</ul>
--->
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
