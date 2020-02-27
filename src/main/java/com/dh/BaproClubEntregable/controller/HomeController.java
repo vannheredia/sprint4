@@ -40,7 +40,7 @@ public class HomeController {
 	public String login(Usuario usr , Model model) {
 	
 		
-	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
+	Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
 	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
 	
 	model.addAttribute("publicaciones", publicaciones);
@@ -54,7 +54,7 @@ public class HomeController {
 	public String buscamiamigo(Usuario usr , Model model) {
 	
 		
-	Usuario usrLogueado = usuarioJpaRepository.findUserByMail(usr.getEmail());
+	Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
 	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
 	
 	model.addAttribute("publicaciones", publicaciones);
@@ -78,7 +78,7 @@ public class HomeController {
 	@GetMapping("/perfil")
 	public String getPerfil(Model model) {
 	
-		Usuario usrLogueado = usuarioJpaRepository.findUserByMail("adalovelace@gmail.com");
+		Usuario usrLogueado = usuarioJpaRepository. findByEmail("adalovelace@gmail.com");
 		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
 		
 		model.addAttribute("publicaciones", publicaciones);

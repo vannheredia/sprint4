@@ -29,3 +29,18 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Eclipse ###
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+application.properties
+/.gitignore
+/.mvn/
+/InitRedSocial.sql
+/mvnw
+/mvnw.cmd
+/pom.xml
+/src/
