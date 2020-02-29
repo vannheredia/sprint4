@@ -42,13 +42,13 @@ public class Comentario {
 	public void setIdPublicacion(Publicacion idPublicacion) {
 		this.unaPublicacion = idPublicacion;
 	}
-	public String getComentario() {
+	
+	public String getUnComentario() {
 		return unComentario;
 	}
-	public void setComentario(String comentario) {
-		this.unComentario = comentario;
+	public void setUnComentario(String unComentario) {
+		this.unComentario = unComentario;
 	}
-	
 	
 	
 }

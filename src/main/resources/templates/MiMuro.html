@@ -64,7 +64,7 @@
 			<div class="col-sm-12 " >
 			
 				<form action="subirPublicacion" method="post" >
-					<textarea name="texto" rows="5" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+					<textarea name="texto" rows="3" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
 					         
   		
 					<button type="submit" class="btn btn-outline-success">Publicar</button>			
@@ -84,16 +84,19 @@
 					</div>
 					<p th:text=${pub.texto} style="font-size: 15px"></p>
 					<div id="iconos">
+						  <!--   
 						  <button id="meGusta" type="button" name="button">
 							<img class="botonmegusta" src="imagenes/megusta.png">
 						</button>
-
+-->
 
 						<!--Aca empieza boton de comentar emergente-->
+					<!--
 						<button type="button" class="button" data-toggle="modal"
 							data-target="#comentarModal">
 							<img src="imagenes/dialogo.png">
 						</button>
+						-->
 						<div class="modal fade emergenteDivRompeBolas" id="comentarModal"
 							tabindex="-1" role="dialog" aria-labelledby="comentarModalLabel"
 							aria-hidden="true">
@@ -124,7 +127,7 @@
 							</div>
 
 						</div>
-						<div>
+<!--				 	<div>
 							<div>
 								<a href="nuevoPerfil.html"><span style="font-size:18px">Julian Suarez</span></a><span
 									style="margin: 10px; font-size: 15px;">Buenas
@@ -141,10 +144,12 @@
 							</div>
 
 						</div>
+						
+ -->							
 						<div>
 							<div th:each="com : ${unaListaDeComentarios}">
-								<a href="nuevoPerfil.html"><span style="font-size:18px">Mateo RH</span></a><p
-									style="margin: 10px; font-size: 15px;"th:src="${com.unComentario}">Que bueno!</p>
+								<a href="nuevoPerfil.html"><span style="font-size:18px">Mateo RH</span></a>
+								<p style="margin: 10px; font-size: 15px;"th:src="${com.unComentario}">Que bueno!</p>
 								<button class="eliminarEditarComentarios">...</button>
 							</div>
 						</div>
@@ -152,7 +157,7 @@
 					<div style="margin-top: 10px">
 						<form action="subirComentario" method="post">
 							<textarea rows="1" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
-							<button action="" type="submit" class="botonesGeneral">Comentar</button>				
+							<button type="submit" class="botonesGeneral">Comentar</button>				
 						</form> 
 					</div>
 				</div>
