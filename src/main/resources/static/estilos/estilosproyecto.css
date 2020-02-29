@@ -214,17 +214,19 @@
   color: grey;
 }
 
-
-
+.publicidad{
+	 margin-top: 25px !important;
+		
+}
 .chat{
   
   margin-top: 35px;
   border: rgb(109,178,81) solid 1px ;
   border-radius: 15px;
   width: fit-content;
-  height: 500px;
+  height: 380px;
   position: fixed;
-  margin-left: 80%;
+  margin-left: 83%;
   overflow-y: scroll;  
 }
 

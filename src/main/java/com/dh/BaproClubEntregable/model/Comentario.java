@@ -36,19 +36,19 @@ public class Comentario {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Publicacion getIdPublicacion() {
+	public Publicacion getUnaPublicacion() {
 		return unaPublicacion;
 	}
-	public void setIdPublicacion(Publicacion idPublicacion) {
+	public void setUnaPublicacion(Publicacion idPublicacion) {
 		this.unaPublicacion = idPublicacion;
 	}
-	public String getComentario() {
+	
+	public String getUnComentario() {
 		return unComentario;
 	}
-	public void setComentario(String comentario) {
-		this.unComentario = comentario;
+	public void setUnComentario(String unComentario) {
+		this.unComentario = unComentario;
 	}
-	
 	
 	
 }
