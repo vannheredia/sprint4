@@ -74,8 +74,12 @@
 			
 
 				<div th:each="pub : ${publicaciones}" class="divNoticias">
-					<img src="imagenes/iconoPerfil.jpg"> <a
+					<div>
+				 		<a
 						href="nuevoPerfil.html" th:text="${pub.unaCuenta}"></a>
+						<button type="submit" class="btn btn-outline-success" style="float: right">Seguir</button>	
+					</div>	
+					<br>
 					<hr>
 					<div id="post">
 						<post>
