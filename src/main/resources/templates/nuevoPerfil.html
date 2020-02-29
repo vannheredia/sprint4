@@ -36,12 +36,21 @@
 
     <main class="mainPerfilNuevo"> 
     
-    
+   <div class="col-sm-12 " >
+			
+				<form action="subirPublicacion" method="post" >
+					<textarea name="texto" rows="2" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+					<br>         
+  		
+					<button type="submit" class="btn btn-outline-success">Publicar</button>			
+				</form>
+				<br>
+			</div>	 
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
   <span style=font-size:18px  th:text = "${publicacion.texto}"></span>
-  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>  
+<!--  <button id="meGusta" type="button" name="button"><abbr title="amé"></abbr><img class="botonmegusta" src="imagenes/megusta.png" ></abbr></button>   --> 
   </div>
   
 <br>

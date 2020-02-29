@@ -24,7 +24,6 @@ public class Publicacion {
 	@ManyToOne()
 	private Cuenta unaCuenta;
 	private Date fecha;
-	//private List<Usuario> corazones;
 	private String texto;
 	private String imagenDePosteo;
 	@OneToMany(mappedBy="unaPublicacion")
@@ -73,19 +72,14 @@ public class Publicacion {
 	public void setImagenDePosteo(String imagenDePosteo) {
 		this.imagenDePosteo = imagenDePosteo;
 	}
-	
-	
-	
-	
-	
-	/*public List<Usuario> getCorazones() {
-		return corazones;
+
+	public List<Comentario> getUnaListadeComentarios() {
+		return unaListadeComentarios;
 	}
 
-	public void setCorazones(List<Usuario> corazones) {
-		this.corazones = corazones;
-	}*/
-
-
-
-}
+	public void setUnaListadeComentarios(List<Comentario> unaListadeComentarios) {
+		this.unaListadeComentarios = unaListadeComentarios;
+	}	
+	
+	
+	}

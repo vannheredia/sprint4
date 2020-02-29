@@ -2,16 +2,28 @@ package com.dh.BaproClubEntregable.controller;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.dh.BaproClubEntregable.model.Comentario;
+import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
+import com.dh.BaproClubEntregable.model.Usuario;
+import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
 import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
+import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -20,20 +32,47 @@ public class PublicacionController {
 	@Autowired
 	private PublicacionJpaRepository publicacionJpaRepository;
 	
-	@GetMapping("subirPublicacion")
-	public String getMiMuro(Model model) {
-		List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
-		model.addAttribute("publicaciones", publicacionesDelUsuario);
-
-		return "MiMuro";
-	}
+	@Autowired
+	private CuentaJpaRepository cuentaJpaRepository;
+	
+	@Autowired
+	private UsuarioJpaRepository usuarioJpaRepository;
+	
 	
 	@PostMapping("subirPublicacion")
-	public String generarPublicacion(Publicacion unaPublicacion, Model model) {
+	public String generarPublicacion(Publicacion unaPublicacion, Model model, HttpServletRequest request) {
+		
+		HttpSession misession= request.getSession(true);
+		String mailLogueado = misession.getAttribute("emaillogueado").toString();
+		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);
+		unaPublicacion.setUnaCuenta(cuentaJpaRepository.findByUsuario(usrLogueado) );
+
+		
 		publicacionJpaRepository.save(unaPublicacion); 
 		List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
 		model.addAttribute("publicaciones", publicacionesDelUsuario);
 		return "MiMuro";
+	}
+		
+	@PostMapping("subirPublicacionPerfil")
+	public String generarPublicacionPerfil(Publicacion unaPublicacion, Model model) {
+		
+		Cuenta cuentaLogueada = cuentaJpaRepository.getOne(2);
+		unaPublicacion.setUnaCuenta(cuentaLogueada);
+		publicacionJpaRepository.save(unaPublicacion); 
+		
+		
+		
+		Usuario usrLogueado = usuarioJpaRepository.findByEmail("juanaAzurduy@gmail.com");
+		
+		
+		
+		
+		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
+		model.addAttribute("publicaciones", publicaciones);
+		model.addAttribute("usuario", usrLogueado);	
+
+		return "nuevoPerfil";
 	}
 	
 	

@@ -36,10 +36,10 @@ public class Comentario {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Publicacion getIdPublicacion() {
+	public Publicacion getUnaPublicacion() {
 		return unaPublicacion;
 	}
-	public void setIdPublicacion(Publicacion idPublicacion) {
+	public void setUnaPublicacion(Publicacion idPublicacion) {
 		this.unaPublicacion = idPublicacion;
 	}
 	

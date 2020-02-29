@@ -14,6 +14,14 @@ import com.dh.BaproClubEntregable.model.Usuario;
 import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
 @Controller
 public class HomeController {
 	
@@ -30,14 +38,14 @@ public class HomeController {
   /* 
    * ya esta este Get en comentarioController. borramos para que no rompa todo*/
      @GetMapping("/MiMuro")
-	public String getMiMur(Model model) {
+	public String getMiMuro(Model model) {
 		List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
 		model.addAttribute("publicaciones", publicacionesDelUsuario);
     	 return "MiMuro";
 	}
 
 	@PostMapping("/login")
-	public String login(Usuario usr , Model model) {
+	public String login(Usuario usr , Model model, HttpServletRequest request) {
 	
 		
 	Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
@@ -45,6 +53,11 @@ public class HomeController {
 	
 	model.addAttribute("publicaciones", publicaciones);
 	model.addAttribute("usuario", usrLogueado);	
+	
+	
+	HttpSession misession= request.getSession(true);
+	misession.setAttribute("emaillogueado", usr.getEmail());
+
 	
 	return "nuevoPerfil";
 	}
@@ -76,9 +89,13 @@ public class HomeController {
 	}
 	
 	@GetMapping("/perfil")
-	public String getPerfil(Model model) {
-	
-		Usuario usrLogueado = usuarioJpaRepository. findByEmail("adalovelace@gmail.com");
+	public String getPerfil(Model model ,HttpServletRequest request) {
+		
+		HttpSession misession= request.getSession(true);
+		String mailLogueado = misession.getAttribute("emaillogueado").toString();
+		Usuario usrLogueado = usuarioJpaRepository. findByEmail(mailLogueado);
+		
+
 		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
 		
 		model.addAttribute("publicaciones", publicaciones);
