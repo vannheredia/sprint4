@@ -39,7 +39,7 @@ public class PublicacionController {
 	private UsuarioJpaRepository usuarioJpaRepository;
 	
 	
-	@PostMapping("subirPublicacion")
+	@PostMapping("subirPublicacion")	//gestiona las publicaciones del perfil y del muro. 
 	public String generarPublicacion(Publicacion unaPublicacion, Model model, HttpServletRequest request) {
 		
 		HttpSession misession= request.getSession(true);
@@ -54,27 +54,6 @@ public class PublicacionController {
 		return "MiMuro";
 	}
 		
-	@PostMapping("subirPublicacionPerfil")
-	public String generarPublicacionPerfil(Publicacion unaPublicacion, Model model) {
-		
-		Cuenta cuentaLogueada = cuentaJpaRepository.getOne(2);
-		unaPublicacion.setUnaCuenta(cuentaLogueada);
-		publicacionJpaRepository.save(unaPublicacion); 
-		
-		
-		
-		Usuario usrLogueado = usuarioJpaRepository.findByEmail("juanaAzurduy@gmail.com");
-		
-		
-		
-		
-		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());
-		model.addAttribute("publicaciones", publicaciones);
-		model.addAttribute("usuario", usrLogueado);	
 
-		return "nuevoPerfil";
-	}
-	
-	
 
 }
