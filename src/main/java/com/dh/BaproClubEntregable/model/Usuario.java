@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table (name = "usuarios")
@@ -25,6 +26,7 @@ public class Usuario {
 	private Date fechaDeNacimiento;
 	@Column(nullable=false)
 	private String lugarDeNacimiento;
+	@NotNull(message = "El mail es nulo o invalido")
 	@Column(unique=true, nullable=false)
 	private String email;
 	@Column( nullable=false)
@@ -33,6 +35,8 @@ public class Usuario {
 	private String resenia;
 	private String urlFotoPerfil;
 	private String urlFotoPortada; 
+	private Cuenta cuentaDeUsuario;
+	
 	
 	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String lugarDeNacimiento, String email,
 			String contrasenia, String resenia) {
@@ -156,6 +160,16 @@ public class Usuario {
 
 	public void setUrlFotoPortada(String urlFotoPortada) {
 		this.urlFotoPortada = urlFotoPortada;
+	}
+
+
+	public Cuenta getCuentaDeUsuario() {
+		return cuentaDeUsuario;
+	}
+
+
+	public void setCuentaDeUsuario(Cuenta cuentaDeUsuario) {
+		this.cuentaDeUsuario = cuentaDeUsuario;
 	}
 	
 	

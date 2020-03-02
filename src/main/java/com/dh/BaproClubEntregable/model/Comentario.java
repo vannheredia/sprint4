@@ -18,6 +18,10 @@ public class Comentario {
 	
 	@Column
 	private String unComentario;
+	
+	@ManyToOne()
+	private Cuenta unaCuenta;
+
 	@ManyToOne()
 	private Publicacion unaPublicacion;
 	
@@ -49,6 +53,18 @@ public class Comentario {
 	public void setUnComentario(String unComentario) {
 		this.unComentario = unComentario;
 	}
+	@Override
+	public String toString() {
+		return "Comentario [id=" + id + ", unComentario=" + unComentario + ", unaPublicacion=" + unaPublicacion + "]";
+	}
+	public Cuenta getUnaCuenta() {
+		return unaCuenta;
+	}
+	public void setUnaCuenta(Cuenta unaCuenta) {
+		this.unaCuenta = unaCuenta;
+	}
+	
+	
 	
 	
 }

@@ -20,7 +20,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="estilos/estilosproyecto.css">
+<link rel="stylesheet" href="/estilos/estilosproyecto.css">
 
 </head>
 <body>
@@ -74,7 +74,7 @@
 				<div th:each="pub : ${publicaciones}" class="divNoticias">
 					<div>
 				 		<a
-						href="nuevoPerfil.html" th:text="${pub.unaCuenta}"></a>
+						href="nuevoPerfil.html" th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
 						<button type="submit" class="btn btn-outline-success" style="float: right">Seguir</button>	
 					</div>	
 					<br>
@@ -88,38 +88,20 @@
 
 
 					<div class="comentarios">
+												
 						<div>
-							<div>
-								<a href="nuevoPerfil.html"><span style="font-size:18px">María Carolina</span></a><span
-									style="margin: 10px; font-size: 15px;">Que linda foto!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-
-						</div>
-	
-						<div>
-							<div>
-								<a href="nuevoPerfil.html"><span style="font-size:18px">Juanita Jo</span></a><span
-									style="margin: 10px; font-size: 15px;">Besos!</span>
-								<button class="eliminarEditarComentarios">...</button>
-							</div>
-							
-							
-						</div>
-
-							
-						<div>
-							<div th:each="com : ${unaListaDeComentarios}">
-								<a href="nuevoPerfil.html"><span style="font-size:18px">Mateo RH</span></a>
-								<p th:text="${com.unComentario}"  style="font-size: 15px">Que bueno!</p>
+							<div th:each="com : ${pub.getUnaListadeComentarios()}">
+								<a href="nuevoPerfil.html"><span style="font-size:18px" th:text="${com.unaCuenta.usuario.nombre}" ></span></a>
+								<p th:text="${com.unComentario}"  style="font-size: 15px"></p>
 								<button class="eliminarEditarComentarios">...</button> 
 							</div>
 						</div>
 					</div>
-					
+					 
 					<div style="margin-top: 10px">
-						<form action="subirComentario" method="post">
+						<form th:action="@{'/subirComentario/'+${pub.id}}" method="post">
 							<textarea rows="1" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
+							<input type="hidden" name="unaPublicacion" th:value="${pub.id}">
 							<button type="submit" class="botonesGeneral">Comentar</button>				
 						</form> 
 					</div>

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Usuario;
+import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
 @Controller
@@ -23,6 +25,8 @@ public class UsuarioController {
 	@PostMapping("nuevoUsuario")
 	public Usuario insertarUsuario(@RequestBody Usuario unUsuario) {
 		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
+		Cuenta cuentaDeUsuario = new Cuenta();
+		
 		return nuevoUsuario;
 	}
 

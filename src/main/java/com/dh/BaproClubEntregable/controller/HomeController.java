@@ -84,11 +84,11 @@ public class HomeController {
 
 	@PostMapping("/buscamiamigo")
 	public String buscamiamigo(Usuario usr , Model model) {		
-	Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
-	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
-	model.addAttribute("publicaciones", publicaciones);
-	model.addAttribute("usuario", usrLogueado);		
-	return "nuevoPerfil";
+		Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
+		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
+		model.addAttribute("publicaciones", publicaciones);
+		model.addAttribute("usuario", usrLogueado);		
+		return "nuevoPerfil";
 	}
 	
 	
@@ -100,7 +100,7 @@ public class HomeController {
 	
 	@GetMapping("/contacto")
 	public String getContacto() {
-	return "contacto";
+		return "contacto";
 	}
 	
 	@GetMapping("/perfil")
@@ -116,7 +116,7 @@ public class HomeController {
 	
 	@GetMapping("/faq")
 	public String getFaq() {
-	return "faq";
+		return "faq";
 	}
 
 	}

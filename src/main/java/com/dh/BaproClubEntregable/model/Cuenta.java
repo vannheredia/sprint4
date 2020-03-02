@@ -27,6 +27,7 @@ public class Cuenta {
 	@OneToMany(mappedBy = "unaCuenta")
 	private List<Publicacion> publicacionesDelUsuario;
 	
+
 	
 	public Cuenta(Usuario usuario, List<Publicacion> publicacionesDelUsuario) {
 		super();
@@ -37,10 +38,10 @@ public class Cuenta {
 		super();
 	}
 
-	public Usuario getUnUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUnUsuario(Usuario unUsuario) {
+	public void setUsuario(Usuario unUsuario) {
 		this.usuario = unUsuario;
 	}
 	//public List<Publicacion> getPublicacionesDelUsuario() {
