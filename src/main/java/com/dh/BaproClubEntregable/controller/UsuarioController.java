@@ -20,12 +20,20 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioJpaRepository usuarioJpaRepository;
+	@Autowired
+	private CuentaJpaRepository cuentaJpaRepository;
 	
 	//Crear Usuario
 	@PostMapping("nuevoUsuario")
 	public Usuario insertarUsuario(@RequestBody Usuario unUsuario) {
-		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
+		
 		Cuenta cuentaDeUsuario = new Cuenta();
+		
+		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
+		
+		cuentaDeUsuario.setUsuario(nuevoUsuario);
+		
+		cuentaJpaRepository.save(cuentaDeUsuario);
 		
 		return nuevoUsuario;
 	}
@@ -60,7 +68,13 @@ public class UsuarioController {
 	
 	@PostMapping("/registro")
 	public String guardarUsuario(Usuario unUsuario) {
-		this.usuarioJpaRepository.save(unUsuario);
+		Cuenta cuentaDeUsuario = new Cuenta();
+		
+		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
+		
+		cuentaDeUsuario.setUsuario(nuevoUsuario);
+		
+		cuentaJpaRepository.save(cuentaDeUsuario);
 		return "registro-exitoso";
 	}
 

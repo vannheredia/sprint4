@@ -24,18 +24,20 @@ public class Cuenta {
 	@JoinColumn(nullable=false, name="id_usuario")
 	private Usuario usuario;
 	
+	
+	
 	@OneToMany(mappedBy = "unaCuenta")
 	private List<Publicacion> publicacionesDelUsuario;
 	
 
 	
 	public Cuenta(Usuario usuario, List<Publicacion> publicacionesDelUsuario) {
-		super();
+		
 		this.usuario = usuario;
 		//this.publicacionesDelUsuario = publicacionesDelUsuario;
 	}
 	public Cuenta() {
-		super();
+		;
 	}
 
 	public Usuario getUsuario() {

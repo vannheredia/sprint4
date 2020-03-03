@@ -35,7 +35,7 @@ public class Usuario {
 	private String resenia;
 	private String urlFotoPerfil;
 	private String urlFotoPortada; 
-	private Cuenta cuentaDeUsuario;
+	
 	
 	
 	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String lugarDeNacimiento, String email,
@@ -163,16 +163,6 @@ public class Usuario {
 	}
 
 
-	public Cuenta getCuentaDeUsuario() {
-		return cuentaDeUsuario;
-	}
-
-
-	public void setCuentaDeUsuario(Cuenta cuentaDeUsuario) {
-		this.cuentaDeUsuario = cuentaDeUsuario;
-	}
-	
-	
 
 
 }
