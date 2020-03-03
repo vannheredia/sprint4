@@ -64,5 +64,11 @@ public class ComentarioController {
 		
 		return "redirect:/MiMuro";
 	}
-
+	@PostMapping("eliminarComentario")
+	public String eliminarComentario(Comentario uncomentario, Model model) {
+	comentarioJpaRepository.delete(uncomentario);
+	return "redirect:/MiMuro";
+		
+		
+	}
 }

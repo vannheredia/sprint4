@@ -93,7 +93,8 @@
 							<div th:each="com : ${pub.getUnaListadeComentarios()}">
 								<a href="nuevoPerfil.html"><span style="font-size:18px" th:text="${com.unaCuenta.usuario.nombre}" ></span></a>
 								<p th:text="${com.unComentario}"  style="font-size: 15px"></p>
-								<button class="eliminarEditarComentarios">...</button> 
+								<form action="eliminarComentario"><button class="eliminarEditarComentarios">...</button></form>
+							 
 							</div>
 						</div>
 					</div>
