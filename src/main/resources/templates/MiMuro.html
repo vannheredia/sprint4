@@ -36,16 +36,19 @@
 			
 			 <form class="form-inline my-2 my-lg-0" method="post" action="buscamiamigo">
                     <input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos" placeholder="Busca amigues por el E-mail" name="email" aria-label="fotos/personas/grupos">
-                    <input type="submit" class="btn btn-outline-success my-2 my-sm-0 botonNavBar"/>
+                    <input type="submit" value="Buscar"class="btn btn-outline-success my-2 my-sm-0 botonNavBar"/>
                   </form>
 		</div>
 	</nav>
 	<div class="row">
-		<div class="offset-10 sm-2">
-			<input class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="Mi Perfil"></input>
-			<a href="index"><button class="botonesGeneral">Cerrar Sesion</button></a>
-		</div>
+		<div  class="offset-10 sm-2">		
+			<a href="perfil"><input  class="btn btn-outline-success my-2 my-sm-0 "  type="submit" value="Mi Perfil"></input></a>
+		</div>		
+		<div>			
+			<form action="cerrarSesion" method="post"><button class="botonesGeneral">Cerrar Sesion</button></form>			
+	   </div>
 	</div>
+	
 	<div class="row ">
 	
 		<div class="sm-2 "   style="margin-right: 60px"  >
@@ -104,7 +107,7 @@
 								
 								<form action="eliminarComentario" method="post">
 									<input type="hidden" name="id" th:value="${com.id}">
-									<button class="eliminarEditarComentarios">...</button>
+									<button class="eliminarEditarComentarios" style="font-size:12px" >Borrar</button>
 								</form>
 							 
 							</div>
