@@ -24,19 +24,14 @@ public class UsuarioController {
 	private CuentaJpaRepository cuentaJpaRepository;
 	
 	//Crear Usuario
-	@PostMapping("nuevoUsuario")
+	/*@PostMapping("nuevoUsuario")
 	public Usuario insertarUsuario(@RequestBody Usuario unUsuario) {
-		
 		Cuenta cuentaDeUsuario = new Cuenta();
-		
 		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
-		
 		cuentaDeUsuario.setUsuario(nuevoUsuario);
-		
 		cuentaJpaRepository.save(cuentaDeUsuario);
-		
 		return nuevoUsuario;
-	}
+	}*/
 
 	//Obtener Todos los usuarios
 	@GetMapping("todosLosUsuarios")
@@ -75,7 +70,7 @@ public class UsuarioController {
 		cuentaDeUsuario.setUsuario(nuevoUsuario);
 		
 		cuentaJpaRepository.save(cuentaDeUsuario);
-		return "registro-exitoso";
+		return "index";
 	}
 
 }

@@ -40,7 +40,6 @@ public class Usuario {
 	
 	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String lugarDeNacimiento, String email,
 			String contrasenia, String resenia) {
-		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaDeNacimiento = fechaDeNacimiento;

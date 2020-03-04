@@ -29,7 +29,9 @@
 		<div class="collapse navbar-collapse footer" id="navbarTogglerDemo01">
 			<a class="navbar-brand" href="index"><img class="navbar-brand"
 				src="imagenes\LogoBaproClub.jpg"></abbr></a>
+				<!--boton comentado
 			<a href="perfil"><input  class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="Mi Perfil"></input></a>
+			-->
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
 			
 			 <form class="form-inline my-2 my-lg-0" method="post" action="buscamiamigo">
@@ -38,7 +40,12 @@
                   </form>
 		</div>
 	</nav>
-
+	<div class="row">
+		<div class="offset-10 sm-2">
+			<input class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="Mi Perfil"></input>
+			<a href="index"><button class="botonesGeneral">Cerrar Sesion</button></a>
+		</div>
+	</div>
 	<div class="row ">
 	
 		<div class="sm-2 "   style="margin-right: 60px"  >
@@ -61,6 +68,7 @@
 		<div class="muro col-sm-8 ">
 		
 			<main class="noticias">
+			
 			<div class="col-sm-12 " >
 			
 				<form action="subirPublicacion" method="post" >
@@ -93,7 +101,11 @@
 							<div th:each="com : ${pub.getUnaListadeComentarios()}">
 								<a href="nuevoPerfil.html"><span style="font-size:18px" th:text="${com.unaCuenta.usuario.nombre}" ></span></a>
 								<p th:text="${com.unComentario}"  style="font-size: 15px"></p>
-								<form action="eliminarComentario"><button class="eliminarEditarComentarios">...</button></form>
+								
+								<form action="eliminarComentario" method="post">
+									<input type="hidden" name="id" th:value="${com.id}">
+									<button class="eliminarEditarComentarios">...</button>
+								</form>
 							 
 							</div>
 						</div>
@@ -115,13 +127,18 @@
 
 
 			</main>
-
+			<div class="flecha">
+                 <a href="#top"><img src="imagenes/flecha1.png" alt="">
+                 <span>Volver arriba</span></a>
+            </div>
 
 		</div>
+		
 
 
-
-		<div class="chat ">
+		<div class="chat">
+		
+			
 
 			<div id="chat">
 
