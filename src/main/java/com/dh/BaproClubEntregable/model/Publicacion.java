@@ -13,6 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 @Table (name = "publicaciones")
 public class Publicacion {
@@ -26,6 +29,8 @@ public class Publicacion {
 	private Date fecha;
 	private String texto;
 	private String imagenDePosteo;
+	
+	@Cascade(CascadeType.REFRESH)
 	@OneToMany(mappedBy="unaPublicacion")
 	private List<Comentario> unaListadeComentarios;
 	

@@ -20,6 +20,10 @@ public class Vinculos {
 	@Column( nullable=false)
 	private Integer idUsuario;
 	private Integer idUsuarioSeguido;
+	
+	public Vinculos() {
+		
+	}
 
 	public Vinculos(Integer iD_usuario, Integer iD_usuarioSeguido) {
 		idUsuario = iD_usuario;
@@ -29,6 +33,7 @@ public class Vinculos {
 	public Integer getIdUsuario() {
 		return idUsuario;
 	}
+	
 
 	public void setIdUsuario(Integer iD_usuario) {
 		idUsuario = iD_usuario;

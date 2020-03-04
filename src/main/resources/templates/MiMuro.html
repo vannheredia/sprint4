@@ -29,126 +29,150 @@
 		<div class="collapse navbar-collapse footer" id="navbarTogglerDemo01">
 			<a class="navbar-brand" href="index"><img class="navbar-brand"
 				src="imagenes\LogoBaproClub.jpg"></abbr></a>
-				<!--boton comentado
-			<a href="perfil"><input  class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="Mi Perfil"></input></a>
-			-->
+
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-			
-			 <form class="form-inline my-2 my-lg-0" method="post" action="buscamiamigo">
-                    <input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos" placeholder="Busca amigues por el E-mail" name="email" aria-label="fotos/personas/grupos">
-                    <input type="submit" value="Buscar"class="btn btn-outline-success my-2 my-sm-0 botonNavBar"/>
-                  </form>
+
+			<form class="form-inline my-2 my-lg-0" method="post"
+				action="buscamiamigo">
+				<input class="buscadorNavBar mr-sm-2" type="fotos/personas/grupos"
+					placeholder="Busca amigues por el E-mail" name="email"
+					aria-label="fotos/personas/grupos"> <input type="submit"
+					value="Buscar"
+					class="btn btn-outline-success my-2 my-sm-0 botonNavBar" />
+			</form>
 		</div>
 	</nav>
 	<div class="row">
-		<div  class="offset-10 sm-2">		
-			<a href="perfil"><input  class="btn btn-outline-success my-2 my-sm-0 "  type="submit" value="Mi Perfil"></input></a>
-		</div>		
-		<div>			
-			<form action="cerrarSesion" method="post"><button class="botonesGeneral">Cerrar Sesion</button></form>			
-	   </div>
-	</div>
-	
-	<div class="row ">
-	
-		<div class="sm-2 "   style="margin-right: 60px"  >
-		<br>
-		<p style="margin-left:25px">Publicidad</p>
-			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<a href="https://www.turismocity.com.ar/"><img alt="" src="imagenes\turismocity.jpg" style="width: 100%"></a>
-			</div>
-			
-			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<a href="https://www.despegar.com.ar/"><img alt="" src="imagenes\despegar.jpg" style="width: 100%"></a>
-			</div>
-			
-			<div style="background-color: grey; height: 140px; width: 140px; margin-left: 30px; ">
-			<a href="https://www.booking.com/"><img alt="" src="imagenes\booking.jpg" style="width: 100%"></a>
-			</div>
-		
+		<div class="offset-10 sm-2">
+			<a href="perfil"><input
+				class="btn btn-outline-success my-2 my-sm-0 " type="submit"
+				value="Mi Perfil"></input></a>
 		</div>
-		
-		<div class="muro col-sm-8 ">
-		
-			<main class="noticias">
-			
-			<div class="col-sm-12 " >
-			
-				<form action="subirPublicacion" method="post" >
-					<textarea name="texto" rows="2" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+		<div>
+			<form action="cerrarSesion" method="post">
+				<button class="botonesGeneral">Cerrar Sesion</button>
+			</form>
+		</div>
+	</div>
 
-				<button type="submit" class="btn btn-outline-success">Publicar</button>			
-				</form>
-			</div>			
-			
+	<div class="row ">
+
+		<div class="sm-2 " style="margin-right: 60px">
+			<br>
+			<p style="margin-left: 25px">Publicidad</p>
+			<div
+				style="background-color: grey; height: 140px; width: 140px; margin-left: 30px;">
+				<a href="https://www.turismocity.com.ar/"><img alt=""
+					src="imagenes\turismocity.jpg" style="width: 100%"></a>
+			</div>
+
+			<div
+				style="background-color: grey; height: 140px; width: 140px; margin-left: 30px;">
+				<a href="https://www.despegar.com.ar/"><img alt=""
+					src="imagenes\despegar.jpg" style="width: 100%"></a>
+			</div>
+
+			<div
+				style="background-color: grey; height: 140px; width: 140px; margin-left: 30px;">
+				<a href="https://www.booking.com/"><img alt=""
+					src="imagenes\booking.jpg" style="width: 100%"></a>
+			</div>
+
+		</div>
+
+		<div class="muro col-sm-8 ">
+
+			<main class="noticias">
+
+				<div class="col-sm-12 ">
+
+					<form action="subirPublicacion" method="post">
+						<textarea name="texto" rows="2" cols="8"
+							placeholder="Escribi una publicacion"
+							style="background-color: whitesmoke !important; border: #9AC00F 1px solid; margin-top: 10px;"></textarea>
+
+						<button type="submit" class="btn btn-outline-success">Publicar</button>
+					</form>
+				</div>
+
 
 				<div th:each="pub : ${publicaciones}" class="divNoticias">
 					<div>
-				 		<a
-						href="nuevoPerfil.html" th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
-						<button type="submit" class="btn btn-outline-success" style="float: right">Seguir</button>	
-					</div>	
+						<a href="nuevoPerfil.html"
+							th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
+
+						<form action="seguir" method="post">
+							<input type="hidden" name="cuentaSeguida" th:value="${pub.unaCuenta}">
+							<button type="submit" class="btn btn-outline-success"
+								style="float: right">Seguir</button>
+						</form>
+
+					</div>
 					<br>
 					<hr>
 					<div id="post">
-						<post>
-						<img th:src="${pub.imagenDePosteo}"></post>
+						<post> <img th:src="${pub.imagenDePosteo}"></post>
 					</div>
 					<p th:text=${pub.texto} style="font-size: 15px"></p>
 
 
 
 					<div class="comentarios">
-												
+
 						<div>
-							<div th:each="com : ${pub.getUnaListadeComentarios()}">
-								<a href="nuevoPerfil.html"><span style="font-size:18px" th:text="${com.unaCuenta.usuario.nombre}" ></span></a>
-								<p th:text="${com.unComentario}"  style="font-size: 15px"></p>
-								
+							<div th:each="com : ${pub.getUnaListadeComentarios()}"
+								style="display: flex; width: 100%; justify-content: space-between;">
+								<a href="nuevoPerfil.html"><span style="font-size: 15px"
+									th:text="${com.unaCuenta.usuario.nombre}"></span></a>
+								<p th:text="${com.unComentario}"
+									style="font-size: 12px; flex-wrap: wrap;"></p>
+
 								<form action="eliminarComentario" method="post">
 									<input type="hidden" name="id" th:value="${com.id}">
-									<button class="eliminarEditarComentarios" style="font-size:12px" >Borrar</button>
+									<button class="eliminarEditarComentarios"
+										style="font-size: 10px">Borrar</button>
 								</form>
-							 
+
 							</div>
 						</div>
 					</div>
-					 
+
 					<div style="margin-top: 10px">
 						<form th:action="@{'/subirComentario/'+${pub.id}}" method="post">
-							<textarea rows="1" cols="" name="unComentario" placeholder="Deja tu comentario"></textarea> 
+							<textarea rows="1" cols="" name="unComentario"
+								placeholder="Deja tu comentario"></textarea>
 							<input type="hidden" name="unaPublicacion" th:value="${pub.id}">
-							<button type="submit" class="botonesGeneral">Comentar</button>				
-						</form> 
+							<button type="submit" class="botonesGeneral">Comentar</button>
+						</form>
 					</div>
 				</div>
 				<!--Aca termina  ventana emergente para comentar-->
 
 
 
-				
+
 
 
 			</main>
 			<div class="flecha">
-                 <a href="#top"><img src="imagenes/flecha1.png" alt="">
-                 <span>Volver arriba</span></a>
-            </div>
+				<a href="#top"><img src="imagenes/flecha1.png" alt=""> <span>Volver
+						arriba</span></a>
+			</div>
 
 		</div>
-		
+
 
 
 		<div class="chat">
-		
-			
+
+
 
 			<div id="chat">
 
 				<h6>Mis Amigos</h6>
 			</div>
 
-			
+
 
 			<div id="chat">
 
