@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.dh.BaproClubEntregable.SeguimientoService;
 import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.model.Usuario;
@@ -32,51 +33,61 @@ public class VinculoController {
 	@Autowired
 	private CuentaJpaRepository cuentaJpaRepository;
 	
+	@Autowired
+	private SeguimientoService seguimientoService;
+	
 	@GetMapping("seguir")
 	public String getSeguir() {
 		return "MiMuro";
 	}
 	
 	@PostMapping("seguir")
-	public String seguirUsuario(Vinculos vinculo/* , Publicacion publicacion */,Cuenta cuentaSeguida, Model model, HttpServletRequest request) {
+	public String seguirUsuario(Vinculos vinculo, Integer idCuentaASeguir, Model model, HttpServletRequest request) {
 				
 		HttpSession misession= request.getSession(true);
 		String mailLogueado = misession.getAttribute("emaillogueado").toString();
 		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);
 		
 		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
+		Optional<Cuenta> optionalCuentaASeguir = cuentaJpaRepository.findById(idCuentaASeguir);
 		
-		//Integer cuentaId= cuenta.getId();
-		//vinculo.setIdUsuario(cuentaId);
+		if(!optionalCuentaASeguir.isPresent())
+			throw new RuntimeException("Cuenta a Seguir Invalida");
 		
-		//Cuenta cuentaSeguida = publicacion.getUnaCuenta();
-		//Optional<Cuenta> cuentaSeguida = cuentaJpaRepository.findById(id_cuenta);			
-			
-		cuentaSeguida.manejarSeguimiento(cuentaActual);
+		seguimientoService.agregarSeguidor(cuentaActual,optionalCuentaASeguir.get());
+		seguimientoService.agregarSeguido(cuentaActual,optionalCuentaASeguir.get());
 		
-//		cuentaJpaRepository.actualizarCuenta(cuentaActual);
-//		cuentaJpaRepository.actualizarCuenta(cuentaSeguida);
-		
-//		cuentaJpaRepository.save(cuentaSeguida);
-//		cuentaºpaRepository.save(cuentaActual);
-		
-//		updateCuentas(cuentaSeguida);
-//		updateCuentas(cuentaActual);
-//		
-//		cuentaJpaRepository.saveAndFlush(cuentaActual);
-//		cuentaJpaRepository.saveAndFlush(cuentaSeguida);
-		
-		
-		//Integer usuSeguidoId = usuSeguido.getId();
-		//vinculo.setIdUsuarioSeguido(usuSeguidoId);
-		
-		//vinculosJpaRepository.save(vinculo);
+		/*
+		 * Integer cuentaId= cuenta.getId(); vinculo.setIdUsuario(cuentaId);
+		 * 
+		 * Cuenta cuentaSeguida = publicacion.getUnaCuenta(); Optional<Cuenta>
+		 * cuentaSeguida = cuentaJpaRepository.findById(id_cuenta);
+		 * 
+		 * cuentaSeguida.manejarSeguimiento(cuentaActual);
+		 * 
+		 * cuentaJpaRepository.actualizarCuenta(cuentaActual);
+		 * cuentaJpaRepository.actualizarCuenta(cuentaASeguir);
+		 * 
+		 * cuentaJpaRepository.save(cuentaSeguida);
+		 * cuentaºpaRepository.save(cuentaActual);
+		 * 
+		 * updateCuentas(cuentaSeguida); updateCuentas(cuentaActual);
+		 * 
+		 * cuentaJpaRepository.saveAndFlush(cuentaActual);
+		 * cuentaJpaRepository.saveAndFlush(cuentaSeguida);
+		 * 
+		 * 
+		 * Integer usuSeguidoId = usuSeguido.getId();
+		 * vinculo.setIdUsuarioSeguido(usuSeguidoId);
+		 * 
+		 * vinculosJpaRepository.save(vinculo);
+		 */
 		
 		return "redirect:/MiMuro";
 	}
 	
 
-	private void updateCuentas(Cuenta cuenta) {
+	public void updateCuentas(Cuenta cuenta) {
 		cuentaJpaRepository.delete(cuenta);
 		cuentaJpaRepository.save(cuenta);
 	}

@@ -39,7 +39,7 @@ public class PublicacionController {
 	private UsuarioJpaRepository usuarioJpaRepository;
 	
 	
-	@PostMapping("subirPublicacion")	//gestiona las publicaciones del perfil y del muro. 
+	@PostMapping("subirPublicacion")
 	public String generarPublicacion(Publicacion unaPublicacion, Model model, HttpServletRequest request) {
 		
 		HttpSession misession= request.getSession(true);

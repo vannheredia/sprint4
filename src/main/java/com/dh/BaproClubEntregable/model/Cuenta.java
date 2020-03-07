@@ -2,6 +2,7 @@ package com.dh.BaproClubEntregable.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,22 +41,22 @@ public class Cuenta {
 			  joinColumns = @JoinColumn(name = "seguido_id"), 
 			  inverseJoinColumns = @JoinColumn(name = "seguidor_id")
 			  )
-	private List<Cuenta> listaDeSeguidos;
+	private Set<Cuenta> listaDeSeguidos;
 
 	@ManyToMany(mappedBy = "listaDeSeguidos")
-	private List<Cuenta> listaDeSeguidores;
+	private Set<Cuenta> listaDeSeguidores;
 
 	public Cuenta(Usuario usuario, List<Publicacion> publicacionesDelUsuario) {
-
 		this.usuario = usuario;
+		listaDeSeguidos = (Set<Cuenta>)new ArrayList<Cuenta>();
+		listaDeSeguidores = (Set<Cuenta>)new ArrayList<Cuenta>();
 		// this.publicacionesDelUsuario = publicacionesDelUsuario;
 	}
 
 	public Cuenta() {
-		listaDeSeguidos = new ArrayList<Cuenta>();
-		listaDeSeguidores = new ArrayList<Cuenta>();
-	}
-
+		
+	}		
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -71,25 +72,70 @@ public class Cuenta {
 	// publicacionesDelUsuario) {
 	// this.publicacionesDelUsuario = publicacionesDelUsuario;
 	// }
+	
+		
 	public Integer getId() {
 		return id;
 	}
+
+//	public List<Publicacion> getPublicacionesDelUsuario() {
+//		return publicacionesDelUsuario;
+//	}
+//
+//	public void setPublicacionesDelUsuario(List<Publicacion> publicacionesDelUsuario) {
+//		this.publicacionesDelUsuario = publicacionesDelUsuario;
+//	}
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 	
-	public void manejarSeguimiento(Cuenta solicitante) {
-		this.agregarSeguidor(solicitante);
-		solicitante.agregarSeguido(this);
-	}
 	
-	private void agregarSeguidor(Cuenta seguidor) {
-		listaDeSeguidores.add(seguidor);
-	}
 	
-	private void agregarSeguido(Cuenta seguido) {
-		listaDeSeguidos.add(seguido);
+//	public void manejarSeguimiento(Cuenta solicitante) {
+//		this.agregarSeguidor(solicitante);
+//		solicitante.agregarSeguido(this);
+//	}
+	
+	
+
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cuenta other = (Cuenta) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+	
+	public void agregarSeguidor(Cuenta seguidor) {
+		if(!listaDeSeguidores.add(seguidor)) {
+			listaDeSeguidores.remove(seguidor);
+		}
+		
+	}
+
+	public void agregarSeguido(Cuenta seguido) {
+		if(!listaDeSeguidos.add(seguido)) {
+		listaDeSeguidos.add(seguido);
+	}
+		}
 }

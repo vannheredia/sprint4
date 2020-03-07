@@ -27,7 +27,7 @@
 	<nav
 		class="navbar navbar-expand-lg navbar-light bg-light margenNavBar footer">
 		<div class="collapse navbar-collapse footer" id="navbarTogglerDemo01">
-			<a class="navbar-brand" href="index"><img class="navbar-brand"
+			<a class="navbar-brand" href=""><img class="navbar-brand"
 				src="imagenes\LogoBaproClub.jpg"></abbr></a>
 
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
@@ -102,7 +102,7 @@
 							th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
 
 						<form action="seguir" method="post">
-							<input type="hidden" name="cuentaSeguida" th:value="${pub.unaCuenta}">
+							<input type="hidden" name="idCuentaASeguir" th:value="${pub.unaCuenta?.id}">
 							<button type="submit" class="btn btn-outline-success"
 								style="float: right">Seguir</button>
 						</form>
@@ -145,175 +145,37 @@
 							<button type="submit" class="botonesGeneral">Comentar</button>
 						</form>
 					</div>
+										
 				</div>
 				<!--Aca termina  ventana emergente para comentar-->
-
-
-
-
-
 
 			</main>
 			<div class="flecha">
 				<a href="#top"><img src="imagenes/flecha1.png" alt=""> <span>Volver
 						arriba</span></a>
 			</div>
+	    	</div>
 
-		</div>
-
-
-
+ <!--   th:each="com : ${pub.getUnaListadeComentarios()}"-->
 		<div class="chat">
-
-
-
 			<div id="chat">
-
 				<h6>Mis Amigos</h6>
 			</div>
-
-
-
-			<div id="chat">
-
+			<div id="chat"  >
 				<div class="personaChat">
 					<img src="imagenes/iconoPerfil.jpg">
 				</div>
 				<div class="personaChat2">
 					<a href="#">Susanita Lopez</a>
 				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Karina Katrina</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Esteban Tigre</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Mario Bravo</a>
-				</div>
-
-			</div>
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Nicanor Aragán</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Molly Lopez</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Maia Perruna</a>
-				</div>
-
-			</div>
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Toto Poroto</a>
-				</div>
-
-			</div>
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Mario Bravo</a>
-				</div>
-
-			</div>
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Nicanor Aragán</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Molly Lopez</a>
-				</div>
-
-			</div>
-
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Maia Perruna</a>
-				</div>
-
-			</div>
-			<div id="chat">
-
-				<div class="personaChat">
-					<img src="imagenes/iconoPerfil.jpg">
-				</div>
-				<div class="personaChat2">
-					<a href="#">Toto Poroto</a>
-				</div>
-
-			</div>
-
+			</div>	
 
 		</div>
+		
+		
+		
+		
+		
 	</div>
 	<footer>
 		<div class="row content ">
