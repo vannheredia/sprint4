@@ -1,6 +1,7 @@
 package com.dh.BaproClubEntregable.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.model.Usuario;
+import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
 import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 //import com.patugarte.logindemo.model.User;
@@ -32,56 +35,75 @@ public class HomeController {
 	private UsuarioJpaRepository usuarioJpaRepository;
 	@Autowired 
 	private PublicacionJpaRepository publicacionJpaRepository;
-
-	@GetMapping("index") //index es igual a comillas vacias
+	@Autowired
+	private CuentaJpaRepository cuentaJpaRepository;
+	
+	
+	@GetMapping("index")
 	public String getIndex() {
 	return "index";
 	}
+  
+    @GetMapping("/MiMuro")
+	public String getMiMuro(Model model, HttpServletRequest request) {
 
-  /* 
-   * ya esta este Get en comentarioController. borramos para que no rompa todo*/
-     @GetMapping("/MiMuro")
-	public String getMiMuro(Model model) {
-		List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
-		model.addAttribute("publicaciones", publicacionesDelUsuario);
-    	 return "MiMuro";
+    	 List<Publicacion>  publicacionesDelUsuario = publicacionJpaRepository.findAll();
+		model.addAttribute("publicaciones", publicacionesDelUsuario);		
+		HttpSession misession= request.getSession(true);
+		String mailLogueado = misession.getAttribute("emaillogueado").toString();
+		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);		
+		
+		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
+		Set<Cuenta> listaDeSeguidos = cuentaActual.getListaDeSeguidores();
+		model.addAttribute("Seguidos", listaDeSeguidos);
+    
+		 return "MiMuro";
 	}
 
+    
+    @GetMapping("/sucundumsucundum")
+	public String getMiMuro(Usuario usr , Model model, HttpServletRequest request) {
+//parte que busca la informacion en la DB
+    	Usuario usrPerfil = usuarioJpaRepository.findByEmail(usr.getEmail());
+		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrPerfil.getId());	
+
+//Parte que dibuja los modelos con el model and view 		
+		model.addAttribute("userName", usrPerfil.getEmail());			
+		model.addAttribute("publicaciones", publicaciones);
+		model.addAttribute("usuario", usrPerfil);		
+		return "nuevoPerfil";						
+	}
+
+    
 	@PostMapping("/login")
-	public String login(Usuario usr , Model model, HttpServletRequest request) {	
-		//metodo de validacion de usurio y contrasenia subido al Slack por Pat		
-		String mailIngresado = usr.getEmail();		
-		String contraseniaIngresada = usr.getContrasenia();				
+	public String login(Usuario usr , Model model, HttpServletRequest request) {		
 		Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());	
-		if(usrLogueado == null) {			
+		if(usrLogueado == null) 
+		{			
 			return "index";
 		}		
-		if(usrLogueado.getContrasenia().equals(contraseniaIngresada)) {
-			model.addAttribute("userName", usrLogueado.getEmail());			
+		
+		if(usrLogueado.getContrasenia().equals(usr.getContrasenia())) 
+		{
 			List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
-			model.addAttribute("publicaciones", publicaciones);
-			model.addAttribute("usuario", usrLogueado);		
 			HttpSession misession= request.getSession(true);
 			misession.setAttribute("emaillogueado", usr.getEmail());	
+
+			
+			model.addAttribute("publicaciones", publicaciones);
+			model.addAttribute("usuario", usrLogueado);		
 			return "nuevoPerfil";						
-			} else {
+			
+		} 
+		else 
+		{
 			return "index";
-			}
+			
 		}
 		
-		
-		
-	/*  CODIGO PARA MOSTRAR EL NUEVOPERFIL CUANDO USR SE LOGUEA		
-	Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());	
-	List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
-	model.addAttribute("publicaciones", publicaciones);
-	model.addAttribute("usuario", usrLogueado);		
-	HttpSession misession= request.getSession(true);
-	misession.setAttribute("emaillogueado", usr.getEmail());	
-	return "nuevoPerfil";
 	}
-	*/
-
+		
+		
 	@PostMapping("/buscamiamigo")
 	public String buscamiamigo(Usuario usr , Model model) {		
 		Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
@@ -92,7 +114,7 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/uploadFile")     //prueba de boton para subir imagenes desde pc
+	@GetMapping("/uploadFile")   
 		public String renderizarUploadFile() {
 		return "uploadFile";
 	}

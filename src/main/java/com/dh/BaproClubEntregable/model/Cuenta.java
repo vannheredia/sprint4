@@ -38,8 +38,8 @@ public class Cuenta {
 	@ManyToMany
 	@JoinTable(
 			  name = "seguimientos", 
-			  joinColumns = @JoinColumn(name = "seguido_id"), 
-			  inverseJoinColumns = @JoinColumn(name = "seguidor_id")
+			  joinColumns = @JoinColumn(name = "seguidor_id"), 
+			  inverseJoinColumns = @JoinColumn(name = "seguido_id")
 			  )
 	private Set<Cuenta> listaDeSeguidos;
 
@@ -138,4 +138,25 @@ public class Cuenta {
 		listaDeSeguidos.add(seguido);
 	}
 		}
+
+	public Set<Cuenta> getListaDeSeguidos() {
+		return listaDeSeguidos;
+	}
+
+//	public void setListaDeSeguidos(Set<Cuenta> listaDeSeguidos) {
+//		this.listaDeSeguidos = listaDeSeguidos;
+//	}
+
+	public Set<Cuenta> getListaDeSeguidores() {
+		return listaDeSeguidores;
+	}
+
+//	public void setListaDeSeguidores(Set<Cuenta> listaDeSeguidores) {
+//		this.listaDeSeguidores = listaDeSeguidores;
+//	}
+	
+	
+	
+	
+	
 }

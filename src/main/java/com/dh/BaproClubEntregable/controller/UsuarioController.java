@@ -23,38 +23,26 @@ public class UsuarioController {
 	@Autowired
 	private CuentaJpaRepository cuentaJpaRepository;
 	
-	//Crear Usuario
-	/*@PostMapping("nuevoUsuario")
-	public Usuario insertarUsuario(@RequestBody Usuario unUsuario) {
-		Cuenta cuentaDeUsuario = new Cuenta();
-		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
-		cuentaDeUsuario.setUsuario(nuevoUsuario);
-		cuentaJpaRepository.save(cuentaDeUsuario);
-		return nuevoUsuario;
-	}*/
-
-	//Obtener Todos los usuarios
+	
 	@GetMapping("todosLosUsuarios")
 	public List <Usuario> getUsuario(){
 		List <Usuario> usuarios = usuarioJpaRepository.findAll();
 		return usuarios;
 	}
 	
-	//Obtener Usuario por ID
+	
 	@GetMapping("{id}")
 	public Usuario getUsuario(@PathVariable("id")int id) {
 		Usuario unUsuario = usuarioJpaRepository.getOne(id);
 		return unUsuario;
 	}
 	
-	//Eliminar Usuarios
+	
 	@DeleteMapping("{id}")
 	public void deleteUsuario(@PathVariable("id")int id) {
 		usuarioJpaRepository.deleteById(id);;
 	}
 	
-	
-	//Editar Usuario
 	
 	@GetMapping("/registro")
 	public String getFormularioRegistro() {
@@ -63,12 +51,9 @@ public class UsuarioController {
 	
 	@PostMapping("/registro")
 	public String guardarUsuario(Usuario unUsuario) {
-		Cuenta cuentaDeUsuario = new Cuenta();
-		
-		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);
-		
-		cuentaDeUsuario.setUsuario(nuevoUsuario);
-		
+		Cuenta cuentaDeUsuario = new Cuenta();		
+		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);		
+		cuentaDeUsuario.setUsuario(nuevoUsuario);		
 		cuentaJpaRepository.save(cuentaDeUsuario);
 		return "index";
 	}

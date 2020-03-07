@@ -22,7 +22,7 @@ import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 import com.dh.BaproClubEntregable.repository.VinculosJpaRepository;
 
 @Controller
-public class VinculoController {
+public class SeguimientoController {
 	
 	@Autowired
 	private VinculosJpaRepository vinculosJpaRepository;
@@ -42,7 +42,7 @@ public class VinculoController {
 	}
 	
 	@PostMapping("seguir")
-	public String seguirUsuario(Vinculos vinculo, Integer idCuentaASeguir, Model model, HttpServletRequest request) {
+	public String seguirUsuario(Integer idCuentaASeguir, Model model, HttpServletRequest request) {
 				
 		HttpSession misession= request.getSession(true);
 		String mailLogueado = misession.getAttribute("emaillogueado").toString();
@@ -51,38 +51,11 @@ public class VinculoController {
 		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
 		Optional<Cuenta> optionalCuentaASeguir = cuentaJpaRepository.findById(idCuentaASeguir);
 		
-		if(!optionalCuentaASeguir.isPresent())
-			throw new RuntimeException("Cuenta a Seguir Invalida");
+//		if(!optionalCuentaASeguir.isPresent())
+//			throw new RuntimeException("Cuenta a Seguir Invalida");
 		
 		seguimientoService.agregarSeguidor(cuentaActual,optionalCuentaASeguir.get());
 		seguimientoService.agregarSeguido(cuentaActual,optionalCuentaASeguir.get());
-		
-		/*
-		 * Integer cuentaId= cuenta.getId(); vinculo.setIdUsuario(cuentaId);
-		 * 
-		 * Cuenta cuentaSeguida = publicacion.getUnaCuenta(); Optional<Cuenta>
-		 * cuentaSeguida = cuentaJpaRepository.findById(id_cuenta);
-		 * 
-		 * cuentaSeguida.manejarSeguimiento(cuentaActual);
-		 * 
-		 * cuentaJpaRepository.actualizarCuenta(cuentaActual);
-		 * cuentaJpaRepository.actualizarCuenta(cuentaASeguir);
-		 * 
-		 * cuentaJpaRepository.save(cuentaSeguida);
-		 * cuentaºpaRepository.save(cuentaActual);
-		 * 
-		 * updateCuentas(cuentaSeguida); updateCuentas(cuentaActual);
-		 * 
-		 * cuentaJpaRepository.saveAndFlush(cuentaActual);
-		 * cuentaJpaRepository.saveAndFlush(cuentaSeguida);
-		 * 
-		 * 
-		 * Integer usuSeguidoId = usuSeguido.getId();
-		 * vinculo.setIdUsuarioSeguido(usuSeguidoId);
-		 * 
-		 * vinculosJpaRepository.save(vinculo);
-		 */
-		
 		return "redirect:/MiMuro";
 	}
 	

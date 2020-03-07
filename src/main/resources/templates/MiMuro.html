@@ -156,20 +156,18 @@
 			</div>
 	    	</div>
 
- <!--   th:each="com : ${pub.getUnaListadeComentarios()}"-->
 		<div class="chat">
 			<div id="chat">
 				<h6>Mis Amigos</h6>
 			</div>
-			<div id="chat"  >
+			<div id="chat" th:each="DivSeguidos : ${Seguidos}" >			
 				<div class="personaChat">
 					<img src="imagenes/iconoPerfil.jpg">
 				</div>
 				<div class="personaChat2">
-					<a href="#">Susanita Lopez</a>
-				</div>
+					<a th:href="'sucundumsucundum?Email=' + ${DivSeguidos.getUsuario().getEmail()}" th:text="${DivSeguidos.getUsuario().getNombre()}">Susanita Lopez</a>
+				</div>		
 			</div>	
-
 		</div>
 		
 		
