@@ -67,8 +67,7 @@ public class HomeController {
     	Usuario usrPerfil = usuarioJpaRepository.findByEmail(usr.getEmail());
 		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrPerfil.getId());	
 
-//Parte que dibuja los modelos con el model and view 		
-		model.addAttribute("userName", usrPerfil.getEmail());			
+//Parte que dibuja los modelos con el model and view 			
 		model.addAttribute("publicaciones", publicaciones);
 		model.addAttribute("usuario", usrPerfil);		
 		return "nuevoPerfil";						

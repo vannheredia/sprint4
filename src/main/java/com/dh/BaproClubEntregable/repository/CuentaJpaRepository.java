@@ -17,11 +17,11 @@ public interface CuentaJpaRepository extends JpaRepository<Cuenta, Integer>{
 //
 //	@Query ("UPDATE Cuenta c SET :unaCuenta")
 //	void updateCuenta(@Param("unaCuenta") Cuenta unaCuenta);
-
-	@Transactional
-	@Modifying
-	@Query("UPDATE Cuenta c SET c = :cuenta")
-	void actualizarCuenta(@Param("cuenta") Cuenta cuenta);
-	
+//
+//	@Transactional
+//	@Modifying
+//	@Query("UPDATE Cuenta c SET c = :cuenta")
+//	void actualizarCuenta(@Param("cuenta") Cuenta cuenta);
+//	
 	
 }

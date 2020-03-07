@@ -50,7 +50,7 @@ public class Cuenta {
 		this.usuario = usuario;
 		listaDeSeguidos = (Set<Cuenta>)new ArrayList<Cuenta>();
 		listaDeSeguidores = (Set<Cuenta>)new ArrayList<Cuenta>();
-		// this.publicacionesDelUsuario = publicacionesDelUsuario;
+		
 	}
 
 	public Cuenta() {
@@ -64,41 +64,14 @@ public class Cuenta {
 	public void setUsuario(Usuario unUsuario) {
 		this.usuario = unUsuario;
 	}
-
-	// public List<Publicacion> getPublicacionesDelUsuario() {
-	// return publicacionesDelUsuario;
-	// }
-	// public void setPublicacionesDelUsuario(List<Publicacion>
-	// publicacionesDelUsuario) {
-	// this.publicacionesDelUsuario = publicacionesDelUsuario;
-	// }
 	
-		
 	public Integer getId() {
 		return id;
 	}
 
-//	public List<Publicacion> getPublicacionesDelUsuario() {
-//		return publicacionesDelUsuario;
-//	}
-//
-//	public void setPublicacionesDelUsuario(List<Publicacion> publicacionesDelUsuario) {
-//		this.publicacionesDelUsuario = publicacionesDelUsuario;
-//	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
-	
-//	public void manejarSeguimiento(Cuenta solicitante) {
-//		this.agregarSeguidor(solicitante);
-//		solicitante.agregarSeguido(this);
-//	}
-	
-	
-
 	
 	
 	@Override
@@ -143,20 +116,9 @@ public class Cuenta {
 		return listaDeSeguidos;
 	}
 
-//	public void setListaDeSeguidos(Set<Cuenta> listaDeSeguidos) {
-//		this.listaDeSeguidos = listaDeSeguidos;
-//	}
 
 	public Set<Cuenta> getListaDeSeguidores() {
 		return listaDeSeguidores;
 	}
 
-//	public void setListaDeSeguidores(Set<Cuenta> listaDeSeguidores) {
-//		this.listaDeSeguidores = listaDeSeguidores;
-//	}
-	
-	
-	
-	
-	
 }
