@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contacto</title>
-   
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos\estilosproyecto.css">
 </head>
@@ -21,76 +21,42 @@
                         <button class="btn btn-outline-success my-2 my-sm-0 botonNavBar" type="submit">Buscar</button>
                       </form>
                 </div>
-            </nav>                  
+            </nav>
     </header>
 
     <main>
        <div class="container-fuid">
           <div class="formulario-contact row">
-              <div class="col-md-12 contacto">
-                <h4>CONTACTATE CON NOSOTROS</h4>
-               
-                 
+              <div class="offset-md-2 col-md-8 contacto">
+                <h2 class="titulo-contacto">CONTACTATE CON NOSOTROS</h2>
+				<div class="row">
+	             	<div class="offset-sm-1 col-sm-10 texto-contacto">
+	                	<p>Esta es una red social corporativa que busca la integración e interacción
+	                	 del personal de las distintas áreas y sucursales. El fin es motivar las ideas creativas 
+	                	 que fortalecen el trabajo en equipo compartiendo vivencias y experiencias.</p>
+	                 	<p>Siempre estamos dispuestos a escuchar tus sugerencias y comentarios sobre nuestro servicio. 
+	                 	Tu mensaje será manejado bajo la directa supervisión de nuestra gerencia ejecutiva.</p>
+	 				</div> 
+	 			</div>            
               </div>
-                <div class="col-md-6 offset-md-3 formulario">
-                    <form class="row" action="home.html" method="POST">
-                        <p class="col-md-2">
-                          <label for="nombre">Nombre</label>
-                        </p>
-                        <p class="col-md-10">
-                          <input class="nombre" type="text" style="width:90%"; name="Nombre"><br><span class="spanErrorEstilo error-inputNombre"></span>
-                        </p>
-                        <p class="col-md-2">
-                          <label for="apellido">Apellido</label>
-                        </p>
-                        <p class="col-md-10">
-                          <input class="apellido" type="text" style="width:90%"; name="Apellido"><br><span class="spanErrorEstilo error-inputApellido"></span>
-                        </p>
-                        
-                        <p class="col-md-2">
-                          <label for="email">Mail</label>
-                        </p>
-                        <p class="col-md-10">
-                          <input class="email" type="email" style="width:90%;" name="mail"><br><span class="spanErrorEstilo error-inputEmail"></span>
-                        </p>
-
-                        <p class="col-md-2">
-                          <label for="udn">UDN</label>
-                        </p>
-                        <p class="col-md-10">
-
-                          <select name="" style="width:90%;" id="UDN">
-                              <option selected hidden value="0">Sucursal</option>
-                              <option value="Areas Centrales">Areas Centrales</option>
-                              <option value="5006">5006</option>
-                              <option value="5014">5014</option>
-                              <option value="5051">5051</option>
-                              <option value="5054">5054</option>
-                              <option value="5062">5062</option>
-                          </select><br><span class="spanErrorEstilo error-inputUdn"></span>
-                          </p>
-                          <p class="col-md-2">
-                            <label for="comentario-contact">Mensaje</label>
-                          </p>
-                          <p class="col-md-10">
-                              <label for="comenta" ></label>
-                              <textarea class="mensaje" id="comenta" name="comenta"  rows="4" cols="12" placeholder="Escribe tu mensaje aquí..." style="width:90%;"></textarea><br><span class="spanErrorEstilo error-inputMensaje"  ></span>
-                          </p>
-                          
-                          <button action="" class="btn btn-sm btn-outline-secondary btn-primary Contacto botonesGeneral btn-outline-success" id="enviar" type="button">Enviar</button>
-                      </form>
-                  </div>
+                 <div class="col-md-4 offset-md-4 formulario" style="margin-top:20px; margin-bottom:20px;">
+                    
+                        <a href="mailto:contacto@baproclub.com.ar">
+                          <span type="button" style="width:100px;" class="btn btn-primary Contacto botonesGeneral btn-outline-success" id="enviar">Contactar</span>
+                    	</a>
+                    
+                 </div>
 
               </div>
         </div>
 
     </main>
-    
+
     <footer>
-      <div class="row content divFooter ">                 
+      <div class="row content divFooter ">
          <nav class="pie ">
             <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-             <ul class="navbar-nav ">                           
+             <ul class="navbar-nav " style="width: 100%; display:flex; justify-content:space-around;">
                  <li class="nav-item">
                  <a class="nav-link footerYBarraSupGeneral hoverOrange" href="index">Home</a>
                  </li>
@@ -108,7 +74,7 @@
                  </li>
                </ul>
             </nav>
-          </nav>                    
+          </nav>
       </div>
   </footer>
     </div>
