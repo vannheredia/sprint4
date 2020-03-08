@@ -113,12 +113,6 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/uploadFile")   
-		public String renderizarUploadFile() {
-		return "uploadFile";
-	}
-	
-	
 	@GetMapping("/contacto")
 	public String getContacto() {
 		return "contacto";

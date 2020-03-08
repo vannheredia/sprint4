@@ -59,21 +59,32 @@ public class UsuarioController {
 	
 	@PostMapping("/registro")
 	public String guardarUsuario(Usuario unUsuario, BindingResult bindingResult, RedirectAttributes redirAttrs, 
-			@RequestParam("urlFotoPerfil")MultipartFile file)throws IOException {
+			@RequestParam("urlFotoPerfil")MultipartFile file)throws IOException
+	{
 //		if(bindingResult.hasErrors()) {
 //			return "registro";}
 //		
-		//ruta en java de la carpeta donde guarda las imagenes 
 		String carpeta = ".//src//main//resources//static//subidasUsuarios//";
-		//si la imagen la subi, por que puede ser opcional 
+		
 		if(!file.isEmpty()) {
-			//aqui subo la imagen de la carpeta
+			
 			byte[] bytes = file.getBytes();
 			Path path =Paths.get(carpeta + file.getOriginalFilename());
 			Files.write(path, bytes);
-			//luego le guardo la imagen , 
+			
 			unUsuario.setUrlFotoPerfil("/subidasUsuarios/" + file.getOriginalFilename());
-		}		
+		}	
+		
+//		intento de subir foto de portada. consultar con profe. 		
+//		 @RequestParam("urlFotoPortada")MultipartFile filePortada
+//		if(!filePortada.isEmpty()) {
+//			
+//			byte[] bytes = filePortada.getBytes();
+//			Path path =Paths.get(carpeta + filePortada.getOriginalFilename());
+//			Files.write(path, bytes);
+//			
+//			unUsuario.setUrlFotoPortada("/subidasUsuarios/" +filePortada.getOriginalFilename());		
+		
 		Cuenta cuentaDeUsuario = new Cuenta();		
 		Usuario nuevoUsuario = usuarioJpaRepository.save(unUsuario);		
 		cuentaDeUsuario.setUsuario(nuevoUsuario);		
@@ -84,4 +95,7 @@ public class UsuarioController {
 		return "index";
 	}
 
+	
 }
+	
+

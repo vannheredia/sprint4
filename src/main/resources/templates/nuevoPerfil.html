@@ -33,7 +33,7 @@
     <br>
     <br>
     <br>
-    <div class="divDeImagenDePerfil"><img  th:src="${usuario.urlFotoPerfil != null}? @{${usuario.urlFotoPerfil}}:@{/subidasUsuarios/estrellaDefault.jpg} " class="imagenDePerfilNueva" alt=""></div>
+    <div class="divDeImagenDePerfil"><img  th:src="${usuario.urlFotoPerfil != null}? @{${usuario.urlFotoPerfil}}:@{/subidasUsuarios/estrellaDefault.jpg}" class="imagenDePerfilNueva" alt=""></div>
     <p class="datosPersonales" style=font-size:40px  th:text="${usuario.nombre + ' ' + usuario.apellido}" id=usuarioNombre> Maria Carolina <br> </p>
     <p class="bio" style=font-size:30px  th:text="${usuario.resenia}">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 
@@ -41,10 +41,10 @@
     
    <div class="col-sm-12 " >
 			
-				<form action="subirPublicacion" method="post" >
-					<textarea name="texto" rows="2" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+				<form method="post" action="subirPublicacion"  enctype="multipart/form-data">
+					<textarea name="texto" rows="1" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
 					<br>         
-  		
+  		 			 <input  class=" input-registro" type="file"  step=1  id="archivosubido " name="archivosubido"><br>
 					<button type="submit" class="btn btn-outline-success">Publicar</button>			
 				</form>
 				<br>
@@ -52,16 +52,7 @@
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
 <span style=font-size:18px  th:text = "${publicacion.texto}"></span>
-  <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo}" alt="">
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo != null}? @{${publicacion.imagenDePosteo}}:@{/subidasUsuarios/estrellaDefault.jpg}" alt=""> 
   
   
   </div>
