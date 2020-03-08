@@ -506,21 +506,34 @@ width:100%;
   padding: 15px;
 
   }
+  
   .contacto h4, .contacto h3{
     margin-top: 30px;
     margin-bottom: 0px;
     color: green;
     text-align: center;
   }
+  .texto-contacto{
+  	color:grey;
+  	margin-bottom:15px;
+  	font-size:21px;
+  	padding-bottom:0px;
+  }
+  
   .Contacto{
     color:  white;
     font-family: 'Nanum Gothic', sans-serif;
     font-family: 'Hind', sans-serif;
     font-size: 20px;
     width: 100% !important;
-
   }
-  /*nuevo perfil */
+  .titulo-contacto{
+  	margin-top:30px;
+  	font-family: 'Nanum Gothic', sans-serif;
+  	text-align: center;
+  }
+  
+  /****nuevo perfil ******/
   .headerDePerfil{
     width: 100%;
     height: 100%;
@@ -849,8 +862,6 @@ div.fotito-de-perfil{
     padding-right: 0px;
   }
   .faq{
-   /* background-image: url(../imagenes/fondo2ab.png);   fonde verde oscuro polemico de Raquel*/
-    background-size: cover;
     width: 100%;
 
   }
@@ -863,7 +874,7 @@ div.fotito-de-perfil{
     margin-bottom: 35px;
   }
   .categorias div a{
-    color: rgb(127, 158, 13);
+    color: #008000;
   }
   .signo img{
     width: 200px;
@@ -875,7 +886,7 @@ div.fotito-de-perfil{
     border: 1px solid;
     border-radius: 10px;
     padding: 10px;
-    background-color: lightgray;
+    background-color: rgb(222, 241, 227);
   }
   .flecha img{
     height: 30px;
