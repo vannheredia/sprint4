@@ -22,4 +22,18 @@ public class SeguimientoService {
 		cuentaSeguidora.agregarSeguido(cuentaSeguida);
 		cuentaJpaRepository.save(cuentaSeguidora);
 	}
+	
+	public void eliminarSeguidor(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
+		cuentaSeguida.eliminarSeguidor(cuentaSeguidora);
+		cuentaJpaRepository.delete(cuentaSeguida);
+	}
+
+
+	public void eliminarSeguido(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
+		cuentaSeguidora.eliminarSeguido(cuentaSeguida);
+		cuentaJpaRepository.delete(cuentaSeguidora);
+	}
+
+	
+	
 }

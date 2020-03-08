@@ -52,7 +52,8 @@ public class Cuenta {
 		listaDeSeguidores = (Set<Cuenta>)new ArrayList<Cuenta>();
 		
 	}
-
+	
+	
 	public Cuenta() {
 		
 	}		
@@ -121,4 +122,17 @@ public class Cuenta {
 		return listaDeSeguidores;
 	}
 
+	
+	public void eliminarSeguidor(Cuenta seguidor) {
+			
+		listaDeSeguidores.remove(seguidor);
+		
+	}
+	
+	public void eliminarSeguido(Cuenta seguido) {
+		
+		listaDeSeguidos.add(seguido);
+	}
+	
+	
 }
