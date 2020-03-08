@@ -65,4 +65,32 @@ public class SeguimientoController {
 		cuentaJpaRepository.save(cuenta);
 	}
 	
+	@PostMapping("eliminarVinculo")
+	public String Usuario(Integer idCuentaADejarDeSeguir, Model model, HttpServletRequest request) {
+				
+		HttpSession misession= request.getSession(true);
+		String mailLogueado = misession.getAttribute("emaillogueado").toString();
+		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);
+		
+		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
+		Optional<Cuenta> optionalCuentaADejarSeguir = cuentaJpaRepository.findById(idCuentaADejarDeSeguir);
+		
+//		if(!optionalCuentaASeguir.isPresent())
+//			throw new RuntimeException("Cuenta a Seguir Invalida");
+		
+		seguimientoService.eliminarSeguidor(cuentaActual,optionalCuentaADejarSeguir.get());
+		seguimientoService.eliminarSeguido(cuentaActual,optionalCuentaADejarSeguir.get());
+		return "redirect:/MiMuro";
+	}
+	
+
+	public void updateCuentasEliminadas(Cuenta cuenta) {
+		cuentaJpaRepository.delete(cuenta);
+		cuentaJpaRepository.save(cuenta);
+	}
+
+	
 }
+
+	
+

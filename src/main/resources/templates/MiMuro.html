@@ -170,6 +170,14 @@
 			</div>	
 		</div>
 		
+		<div class="personaChat2">
+			<a th:href="'sucundumsucundum?Email=' + ${DivSeguidos.getUsuario().getEmail()}" th:text="${DivSeguidos.getUsuario().getNombre()}">Susanita Lopez</a>
+				<form action="eliminarVinculo" method ="post">
+					<input type="hidden" name="idCuentaADejarDeSeguir" th:value = ${DivSeguidos.getUsuario().getId()}>
+					<button class="eliminarEditarComentarios"> Borrar </button>
+				</form>
+		</div>	
+		
 		
 		
 		
