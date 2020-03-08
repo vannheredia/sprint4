@@ -85,14 +85,15 @@
 			<main class="noticias">
 
 				<div class="col-sm-12 ">
-
-					<form action="subirPublicacion" method="post">
-						<textarea name="texto" rows="2" cols="8"
-							placeholder="Escribi una publicacion"
-							style="background-color: whitesmoke !important; border: #9AC00F 1px solid; margin-top: 10px;"></textarea>
-					 <input  class=" input-registro" type="file"  step=1  id="inputFotoPublicacion " name="imagenDePosteo"><br>
-						<button type="submit" class="btn btn-outline-success">Publicar</button>
-					</form>
+				
+				
+				<form method="post" action="subirPublicacion"  enctype="multipart/form-data">
+					<textarea name="texto" rows="1" cols="8"  placeholder="Escribi una publicacion" style="background-color: whitesmoke!important; border: #9AC00F 1px solid; margin-top:10px;"></textarea>
+					<br>         
+  		 			 <input  class=" input-registro" type="file"  step=1  id="archivosubido " name="archivosubido"><br>
+					<button type="submit" class="btn btn-outline-success">Publicar</button>			
+				</form>
+				
 				</div>
 
 
@@ -111,7 +112,9 @@
 					<br>
 					<hr>
 					<div id="post">
-						<post> <img th:src="${pub.imagenDePosteo}"></post>
+						 <img class="posteosDePerfil"  
+						th:src="${pub.imagenDePosteo != null}? @{${pub.imagenDePosteo}}:@{/subidasUsuarios/estrellaDefault.jpg}" 
+						alt="">
 					</div>
 					<p th:text=${pub.texto} style="font-size: 15px"></p>
 
