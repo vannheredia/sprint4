@@ -23,7 +23,7 @@
 
         <div class="offset-md-2 col-md-8">
           <h4>DATOS DE REGISTRO</h4>
-            <form class="row" action="" method="post">
+            <form class="row" method="post" th:action="@{/registro}" th:object="${Usuario}"  enctype="multipart/form-data"  >
               <p class="col-md-3 text-form">Nombre</p>
             <p class="col-md-9">
               <input class=" input-registro inputNombre"  type="text" name="nombre" placeholder="Ingresa tu nombre aquí..."><br><span class="spanErrorEstilo error-inputNombre"  ></span>
@@ -39,9 +39,6 @@
 
               <input type="date" name="fechaDeNacimiento">
               </select><span class="spanErrorEstilo errorFecha"></span>
-
-
-
             </p>
 
             <p class="col-md-3 text-form">Lugar de nacimiento</p>
@@ -71,8 +68,20 @@
               <textarea name="resenia" class="inputTextSobreVos" type="text" cols="30" rows="3" placeholder="Contanos un poco sobre vos! "></textarea><br><span class="spanErrorEstilo error-inputTextSobreVos"  ></span>
             </p>
             
-            <div class="input-group mb-3">
-  			<div class="custom-file">
+             <p class="col-md-3 text-form">Foto de perfil</p>
+            <p class="col-md-9" >
+              <input   class=" input-registro inputConfirmContrasenia" type="file"  step=1  id="inputFotoPerfil"  name="urlFotoPerfil" placeholder="Foto Perfil"><br><span class="spanErrorEstilo error-confirmContrasenia"></span>
+            </p>
+            
+             <p class="col-md-3 text-form">Foto de portada</p>
+            <p class="col-md-9" >
+              <input   class=" input-registro inputConfirmContrasenia" type="file"   step=1  id="inputFotoPortada " name="urlFotoPortada" placeholder="Foto Portada "><br><span class="spanErrorEstilo error-confirmContrasenia"></span>
+            </p>
+            
+                           
+                       
+  <!--      <div class="input-group mb-3">
+  	 		<div class="custom-file">
     		<input type="file" class="custom-file-input" id="inputGroupFile02">
     		<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
   			</div>
@@ -80,7 +89,7 @@
     		<span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
   			</div>
 			</div>
-
+ -->	
             <p class="col-md-12">
               Al hacer click en Unite! aceptas las Condiciones y confirmas que leiste nuestra Politica de Datos, inlcuido el uso de cookies.
             </p>
