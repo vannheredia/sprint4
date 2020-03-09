@@ -8,23 +8,22 @@ import org.springframework.stereotype.Service;
 
 import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
+import com.dh.BaproClubEntregable.model.Usuario;
 import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
+import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
 
 @Service
 public class SeguimientoService {
 	
 	@Autowired
 	CuentaJpaRepository cuentaJpaRepository;
-	
+	@Autowired 
+	private UsuarioJpaRepository usuarioJpaRepository;
 	
 //	List<Publicacion> findByUserId(Integer Id); 
 	
 	
-	
-	
-	
-	
-	
+		
 	public void agregarSeguidor(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
 		cuentaSeguida.agregarSeguidor(cuentaSeguidora);
 		cuentaJpaRepository.save(cuentaSeguida);
@@ -53,6 +52,11 @@ public class SeguimientoService {
 //	}
 //	
 	
+	
+	public void setearContrasenia(Usuario usrBuscado){
+		
+		usuarioJpaRepository.save(usrBuscado);
+	}
 	
 
 	

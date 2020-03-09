@@ -8,9 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dh.BaproClubEntregable.SeguimientoService;
 import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.model.Usuario;
@@ -38,6 +41,9 @@ public class HomeController {
 	private PublicacionJpaRepository publicacionJpaRepository;
 	@Autowired
 	private CuentaJpaRepository cuentaJpaRepository;
+	
+	@Autowired
+	private SeguimientoService seguimientoService;
 	
 	
 	@GetMapping("index")
@@ -136,21 +142,22 @@ public class HomeController {
 	}
 
 	@GetMapping("/olvidoPassword")
-	public String getOlvidoPassword() {
+	public String getOlvidoPassword(String email, String contrasenia) {
 		return "olvidoPassword";
 	}
 	
 	@PostMapping("olvidoPassword")
-	public String olvidoPassword(@RequestBody String email, String contrasenia) {		
+	public String olvidoPassword(String email, String contrasenia) {		
 		
 		Usuario usrBuscado = usuarioJpaRepository.findByEmail(email);	
-			
-		if(usrBuscado == null) 
-		{			
-			return "El email no se encuentra registrado";
-		}		
+//			
+//		if(usrBuscado == null) 
+//		{			
+//			return "El email no se encuentra registrado";
+//		}		
 		
 		usrBuscado.setContrasenia(contrasenia);
+
 		usuarioJpaRepository.save(usrBuscado);
 		return "index";
 	}
