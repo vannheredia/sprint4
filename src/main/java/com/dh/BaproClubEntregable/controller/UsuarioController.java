@@ -74,8 +74,8 @@ public class UsuarioController {
 	public String guardarUsuario(Usuario unUsuario, BindingResult bindingResult, RedirectAttributes redirAttrs, 
 			@RequestParam("urlFotoPerfil")MultipartFile file)throws IOException
 	{
-		if(bindingResult.hasErrors()) {
-			return "registro";}
+//		if(bindingResult.hasErrors()) {
+//			return "registro";}
 		
 		String carpeta = ".//src//main//resources//static//subidasUsuarios//";
 		
@@ -103,7 +103,7 @@ public class UsuarioController {
 		cuentaDeUsuario.setUsuario(nuevoUsuario);		
 		cuentaJpaRepository.save(cuentaDeUsuario);
 		
-		redirAttrs.addFlashAttribute("mensajeRegistro", "Gracias por registrarte en BaproClub!!");
+//		redirAttrs.addFlashAttribute("mensajeRegistro", "Gracias por registrarte en BaproClub!!");
 		
 		return "index";		
 		}
