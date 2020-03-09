@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
@@ -134,6 +135,28 @@ public class HomeController {
 		return "faq";
 	}
 
+	@GetMapping("/olvidoPassword")
+	public String getOlvidoPassword() {
+		return "olvidoPassword";
 	}
+	
+	@PostMapping("olvidoPassword")
+	public String olvidoPassword(@RequestBody String email, String contrasenia) {		
+		
+		Usuario usrBuscado = usuarioJpaRepository.findByEmail(email);	
+			
+		if(usrBuscado == null) 
+		{			
+			return "El email no se encuentra registrado";
+		}		
+		
+		usrBuscado.setContrasenia(contrasenia);
+		usuarioJpaRepository.save(usrBuscado);
+		return "index";
+	}
+
+	
+	
+}
 
 
