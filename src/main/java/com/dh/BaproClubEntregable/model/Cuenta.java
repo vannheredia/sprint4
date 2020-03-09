@@ -118,6 +118,16 @@ public class Cuenta {
 	}
 
 
+
+	public void borrarListaDeSeguidos() {
+		listaDeSeguidos.removeAll(listaDeSeguidos);
+	}
+	
+
+	public void borrarListaDeSeguidores() {
+		listaDeSeguidores.removeAll(listaDeSeguidores);
+	}
+	
 	public Set<Cuenta> getListaDeSeguidores() {
 		return listaDeSeguidores;
 	}

@@ -10,6 +10,13 @@ for (var i = 0; i < botonesCorazon.length; i++)
                 this.src = this.src.replace("megustaRojo.png", "megusta.png");
         });
 }
+//
+//var eliminar= document.querySelector("eliminarUsuario"){
+//	funcion confirm(eliminar){
+//		confirm("alerta"); 
+//	}
+//}
+//
 
 
 })
