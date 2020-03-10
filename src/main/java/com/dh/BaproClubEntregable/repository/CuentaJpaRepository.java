@@ -1,5 +1,7 @@
 package com.dh.BaproClubEntregable.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,6 +15,9 @@ import com.sun.xml.bind.v2.model.core.ID;
 public interface CuentaJpaRepository extends JpaRepository<Cuenta, Integer>{
 	
 	Cuenta findByUsuario (Usuario usuario);
+	
+	//@Query("select s.cuenta from seguimientos where s.seguido_id = :seguidoId and s.seguidor_id = :seguidorId ")
+//	public Optional<Cuenta> findCuentaByIdOnSeguimiento(@Param("seguidoId") Integer seguidoId,@Param("seguidorId") Integer seguidorId);
 
 //
 //	@Query ("UPDATE Cuenta c SET :unaCuenta")

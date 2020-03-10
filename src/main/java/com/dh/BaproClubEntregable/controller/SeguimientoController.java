@@ -50,12 +50,24 @@ public class SeguimientoController {
 		
 		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
 		Optional<Cuenta> optionalCuentaASeguir = cuentaJpaRepository.findById(idCuentaASeguir);
+	
 		
-//		if(!optionalCuentaASeguir.isPresent())
-//			throw new RuntimeException("Cuenta a Seguir Invalida");
+		if(cuentaActual.getListaDeSeguidos().contains(optionalCuentaASeguir.get())) {
+			
+			usuarioJpaRepository.eliminarSeguidor(idCuentaASeguir,  usrLogueado.getId());
+			
+		} else {
+			
+			
+//			public void agregarSeguido(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
+//				cuentaSeguidora.agregarSeguido(cuentaSeguida);
+//				cuentaJpaRepository.save(cuentaSeguidora);
+//			}
 		
 		seguimientoService.agregarSeguidor(cuentaActual,optionalCuentaASeguir.get());
 		seguimientoService.agregarSeguido(cuentaActual,optionalCuentaASeguir.get());
+		
+		}
 		return "redirect:/MiMuro";
 	}
 	
@@ -78,8 +90,8 @@ public class SeguimientoController {
 //		if(!optionalCuentaASeguir.isPresent())
 //			throw new RuntimeException("Cuenta a Seguir Invalida");
 		
-		seguimientoService.eliminarSeguidor(cuentaActual,optionalCuentaADejarSeguir.get());
-		seguimientoService.eliminarSeguido(cuentaActual,optionalCuentaADejarSeguir.get());
+//		seguimientoService.eliminarSeguidor(cuentaActual,optionalCuentaADejarSeguir.get());
+//		seguimientoService.eliminarSeguido(cuentaActual,optionalCuentaADejarSeguir.get());
 		return "redirect:/MiMuro";
 	}
 	

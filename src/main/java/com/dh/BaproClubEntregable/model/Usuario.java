@@ -1,13 +1,18 @@
 package com.dh.BaproClubEntregable.model;
 import java.sql.Date;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import javax.validation.constraints.NotNull;
+
+
+
 
 @Entity
 @Table (name = "usuarios")
@@ -19,18 +24,28 @@ public class Usuario {
 	@Id	
 	private Integer id;
 	
+	
 	@Column(nullable=false)
 	private String nombre;
+	
+		
 	private String apellido;
+	
 	@Column(nullable=false)
 	private Date fechaDeNacimiento;
+	
+	
+    
 	@Column(nullable=false)
 	private String lugarDeNacimiento;
+	
 	@NotNull(message = "El mail es nulo o invalido")
 	@Column(unique=true, nullable=false)
 	private String email;
+	
 	@Column( nullable=false)
 	private String contrasenia;
+	
 	@Column( nullable=false)
 	private String resenia;
 	private String urlFotoPerfil;

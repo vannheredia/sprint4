@@ -36,13 +36,15 @@ public class SeguimientoService {
 	}
 	
 	public void eliminarSeguidor(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
-		cuentaSeguida.eliminarSeguidor(cuentaSeguidora);
-		cuentaJpaRepository.delete(cuentaSeguida);
+		usuarioJpaRepository.eliminarSeguidor(cuentaSeguida.getId(), cuentaSeguidora.getId());
+//		cuentaSeguida.eliminarSeguidor(cuentaSeguidora);
+//		cuentaJpaRepository.delete(cuentaSeguida);
 	}
 	
-	public void eliminarSeguido(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
-		cuentaSeguidora.eliminarSeguido(cuentaSeguida);
-		cuentaJpaRepository.delete(cuentaSeguidora);
+//	public void eliminarSeguido(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
+//		usuarioJpaRepository.eliminarSeguidor(cuentaSeguidora.getId(), cuentaSeguida.getId());
+//		cuentaSeguidora.eliminarSeguido(cuentaSeguida);
+//		cuentaJpaRepository.delete(cuentaSeguidora);
 	}
 
 //
@@ -53,12 +55,6 @@ public class SeguimientoService {
 //	
 	
 	
-	public void setearContrasenia(Usuario usrBuscado){
 		
-		usuarioJpaRepository.save(usrBuscado);
-	}
 	
 
-	
-	
-}

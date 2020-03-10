@@ -113,8 +113,8 @@ public class HomeController {
 	@PostMapping("/buscamiamigo")
 	public String buscamiamigo(Usuario usr , Model model) {		
 		Usuario usrLogueado = usuarioJpaRepository. findByEmail(usr.getEmail());
-		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
-		model.addAttribute("publicaciones", publicaciones);
+//		List<Publicacion> publicaciones = publicacionJpaRepository.findByUserId(usrLogueado.getId());	
+//		model.addAttribute("publicaciones", publicaciones);
 		model.addAttribute("usuario", usrLogueado);		
 		return "nuevoPerfil";
 	}

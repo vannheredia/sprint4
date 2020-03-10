@@ -28,9 +28,6 @@ window.addEventListener("load", function(){
   /*tomar los datos del formulario*/
   var nombre=document.querySelector(".inputNombre");
   var apellido=document.querySelector(".inputApellido");
-  var dia = document.querySelector("select#dia");
-  var mes = document.querySelector("select#mes");
-  var anio = document.querySelector("select#anio");
   var provincias = document.querySelector("select#provincias");
   var email=document.querySelector(".inputEmail");
   var contrasenia=document.querySelector(".inputContrasenia")
@@ -41,7 +38,7 @@ window.addEventListener("load", function(){
   /*tomo los span de errores del formulario */
   var errorNombre=document.querySelector(".error-inputNombre");
   var errorApellido=document.querySelector(".error-inputApellido");
-  var errorFecha = document.querySelector(".errorFecha");
+  /*var errorFecha = document.querySelector(".errorFecha");*/
   var errorProvincias=document.querySelector(".errorProvincias");
   var errorEmail=document.querySelector(".error-inputEmail");
   var errorContrasenia=document.querySelector(".error-contrasenia");
@@ -75,7 +72,7 @@ window.addEventListener("load", function(){
     apellido.style.border="3px solid rgb(144,197,0)";
   }
 
-  if(dia.value == 0 || mes.value == 0 || anio.value == 0 ){
+  /*if(dia.value == 0 || mes.value == 0 || anio.value == 0 ){
     errorFecha.innerHTML="Seleccioná una fecha válida";
     dia.style.border="3px solid rgb(255,153,18)";
     mes.style.border="3px solid rgb(255,153,18)";
@@ -86,7 +83,8 @@ window.addEventListener("load", function(){
     dia.style.border="3px solid rgb(144,197,0)";
     mes.style.border="3px solid rgb(144,197,0)";
     anio.style.border="3px solid rgb(144,197,0)";
-  }
+  } */
+  
 
 //  if(mes.value == 0){
 //    mes.style.border="3px solid rgb(255,153,18)";
@@ -115,7 +113,7 @@ window.addEventListener("load", function(){
   }
 
 
-  expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  /*METODO DE EXPRESION REGULAR PARA VALIDAR FORMATO DE MAIL   LINKS EXPLICATIVOS : http://lineadecodigo.com/javascript/validar-el-email-con-javascript/  Y ACA OTRO LINK: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions */
+  expr = /^([a-zA-Z0-9_\.\-])+\@bapro+\.)+([a-zA-Z0-9]{2,4})+$/;  /*METODO DE EXPRESION REGULAR PARA VALIDAR FORMATO DE MAIL   LINKS EXPLICATIVOS : http://lineadecodigo.com/javascript/validar-el-email-con-javascript/  Y ACA OTRO LINK: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions */
    if(email.value==""){
     errorEmail.innerHTML="Tu Email es obligatorio";
     email.style.border="3px solid rgb(255,153,18)";

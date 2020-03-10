@@ -11,6 +11,7 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -73,9 +74,10 @@ public class UsuarioController {
 	@PostMapping("/registro")
 	public String guardarUsuario(Usuario unUsuario, BindingResult bindingResult, RedirectAttributes redirAttrs, 
 			@RequestParam("urlFotoPerfil")MultipartFile file)throws IOException
-	{
+		{
 //		if(bindingResult.hasErrors()) {
-//			return "registro";}
+//			return "registro";
+//		}
 		
 		String carpeta = ".//src//main//resources//static//subidasUsuarios//";
 		
@@ -130,7 +132,8 @@ public class UsuarioController {
 		cuentaJpaRepository.delete(cuentaEliminar);	
 		
 		
-		usuarioJpaRepository.delete(usrLogueado);			
+		usuarioJpaRepository.delete(usrLogueado);
+//		usuarioJpaRepository.eliminarSeguidor(cuentaEliminar.getId(), cuentaSeguida.getId());
 		return "index";	
 		
 	}
