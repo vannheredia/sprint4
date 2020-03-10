@@ -57,12 +57,52 @@
 					<button type="submit" class="btn btn-outline-success">Publicar</button>			
 				</form>
 				<br>
-			</div>	 
+			</div>	
+			
+			<div> 
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
-
+	
+<div  class="divFotoPerfil">	
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo != null}? @{${publicacion.imagenDePosteo}}:@{/subidasUsuarios/estrellaDefault.jpg}" alt=""> 
   <span style="font-size:18px; text-align:center;" th:text = "${publicacion.texto}"></span>
+  </div>
+   
+   
+   
+    <div class="comentarios  comentariosNuevoPerfil">
+
+						<div>
+							<div th:each="com : ${publicacion.getUnaListadeComentarios()}"
+								style="display: flex; width: 100%; justify-content: space-between;">
+								<span style="font-size: 15px"
+									th:text="${com.unaCuenta.usuario.nombre}"></span>
+								<p th:text="${com.unComentario}"
+									style="font-size: 12px; flex-wrap: wrap;"></p>
+
+								<form action="eliminarComentario" method="post">
+									<input type="hidden" name="id" th:value="${com.id}">
+									<button class="eliminarEditarComentarios"
+										style="font-size: 10px">Borrar</button>
+								</form>
+
+							</div>
+							
+							</div>
+							</div>
+						
+						
+							<div style="margin-top: 10px">
+						<form th:action="@{'/subirComentario/'+${publicacion.id}}" method="post">
+							<textarea rows="1" cols="" name="unComentario"
+								placeholder="Deja tu comentario"></textarea>
+							<input type="hidden" name="unaPublicacion" th:value="${publicacion.id}">
+							<button type="submit" class="botonesGeneral">Comentar</button>
+						</form>
+					</div>
+							
+						
+					</div>                 
   
   </div>
   
