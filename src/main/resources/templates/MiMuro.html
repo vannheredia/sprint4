@@ -101,13 +101,22 @@
 					<div>
 						<a href="nuevoPerfil.html"
 							th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
-
+							
+						
 						<form action="seguir" method="post">
 							<input type="hidden" name="idCuentaASeguir" th:value="${pub.unaCuenta?.id}">
-							<button type="submit" class="btn btn-outline-success"
-								style="float: right">Seguir</button>
+							<button  type="submit" class="btn btn-outline-success"
+								style="float: right">Seguimiento</button>								 
 						</form>
+								
 
+	<!-- 				<form action="seguir" method="post">
+							<input type="hidden" name="idCuentaASeguir" th:value="${pub.unaCuenta?.id}">
+							<button type="submit" class="btn btn-outline-success"
+								style="float:
+								th:text="${ } ?'Dejar de seguir' : Seguir"></button>
+						</form>
+ -->	
 					</div>
 					<br>
 					<hr>

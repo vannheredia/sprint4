@@ -61,8 +61,10 @@ public class HomeController {
 		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);		
 		
 		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
-		Set<Cuenta> listaDeSeguidos = cuentaActual.getListaDeSeguidores();
+		Set<Cuenta> listaDeSeguidos = cuentaActual.getListaDeSeguidos();
 		model.addAttribute("Seguidos", listaDeSeguidos);
+		
+		
     
 		 return "MiMuro";
 	}

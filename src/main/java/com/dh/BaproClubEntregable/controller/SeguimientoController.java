@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,28 +45,26 @@ public class SeguimientoController {
 	@PostMapping("seguir")
 	public String seguirUsuario(Integer idCuentaASeguir, Model model, HttpServletRequest request) {
 				
-		HttpSession misession= request.getSession(true);
+			HttpSession misession= request.getSession(true);
 		String mailLogueado = misession.getAttribute("emaillogueado").toString();
 		Usuario usrLogueado = usuarioJpaRepository.findByEmail(mailLogueado);
 		
 		Cuenta cuentaActual = cuentaJpaRepository.findByUsuario(usrLogueado);
-		Optional<Cuenta> optionalCuentaASeguir = cuentaJpaRepository.findById(idCuentaASeguir);
-	
+		Optional<Cuenta> optionalCuentaASeguir = cuentaJpaRepository.findById(idCuentaASeguir);	
 		
-		if(cuentaActual.getListaDeSeguidos().contains(optionalCuentaASeguir.get())) {
-			
+		String textoBotonSeguir="Seguir";
+		String textoBotonDejarDeSeguir="Dejar de Seguir";
+		
+		
+		if(cuentaActual.getListaDeSeguidos().contains(optionalCuentaASeguir.get())) 
+		{   
+			model.addAttribute("textoBoton", textoBotonDejarDeSeguir );
 			usuarioJpaRepository.eliminarSeguidor(idCuentaASeguir,  usrLogueado.getId());
-			
-		} else {
-			
-			
-//			public void agregarSeguido(Cuenta cuentaSeguida,Cuenta cuentaSeguidora){
-//				cuentaSeguidora.agregarSeguido(cuentaSeguida);
-//				cuentaJpaRepository.save(cuentaSeguidora);
-//			}
-		
-		seguimientoService.agregarSeguidor(cuentaActual,optionalCuentaASeguir.get());
-		seguimientoService.agregarSeguido(cuentaActual,optionalCuentaASeguir.get());
+		} 
+		else 
+		{
+			model.addAttribute("textoBoton", textoBotonSeguir);
+			seguimientoService.agregarSeguido(optionalCuentaASeguir.get(), cuentaActual);
 		
 		}
 		return "redirect:/MiMuro";

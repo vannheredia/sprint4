@@ -34,8 +34,10 @@
 		</div>
 			
 
-    <header class="headerDePerfil">
-        <img th:src="${usuario.urlFotoPortada}" class="imagenDePortada" alt="">
+    <header class="headerDePerfil">  
+      
+   
+       
     </header>
     <br>
     <br>
@@ -58,9 +60,9 @@
 			</div>	 
 
 <div  th:each = "publicacion: ${publicaciones}" class="posteosPerfilNuevo">
-<span style=font-size:18px  th:text = "${publicacion.texto}"></span>
+
   <img class="posteosDePerfil"  th:src="${publicacion.imagenDePosteo != null}? @{${publicacion.imagenDePosteo}}:@{/subidasUsuarios/estrellaDefault.jpg}" alt=""> 
-  
+  <span style="font-size:18px; text-align:center;" th:text = "${publicacion.texto}"></span>
   
   </div>
   

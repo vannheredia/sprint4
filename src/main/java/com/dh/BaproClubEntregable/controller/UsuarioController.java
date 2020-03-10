@@ -27,9 +27,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dh.BaproClubEntregable.SeguimientoService;
+import com.dh.BaproClubEntregable.model.Comentario;
 import com.dh.BaproClubEntregable.model.Cuenta;
 import com.dh.BaproClubEntregable.model.Publicacion;
 import com.dh.BaproClubEntregable.model.Usuario;
+import com.dh.BaproClubEntregable.repository.ComentarioJpaRepository;
 import com.dh.BaproClubEntregable.repository.CuentaJpaRepository;
 import com.dh.BaproClubEntregable.repository.PublicacionJpaRepository;
 import com.dh.BaproClubEntregable.repository.UsuarioJpaRepository;
@@ -45,6 +47,8 @@ public class UsuarioController {
 	private PublicacionJpaRepository publicacionJpaRepository; 
 	@Autowired
 	private SeguimientoService seguimientoService;
+	@Autowired
+	private ComentarioJpaRepository comentarioJpaRepository; 
 	
 	
 //	
@@ -112,12 +116,15 @@ public class UsuarioController {
 	
 	
 	@PostMapping("/eliminarUsuario")
-	public String eliminarUsuarios(Usuario user, Model model ,HttpServletRequest request , Integer idCuentaASeguir) {		
+	public String eliminarUsuarios(Usuario user, Model model ,HttpServletRequest request , Integer idCuentaASeguir, Comentario unComentario) {		
 		HttpSession misession= request.getSession(true);
 		String mailLogueado = misession.getAttribute("emaillogueado").toString();
 		Usuario usrLogueado = usuarioJpaRepository. findByEmail(mailLogueado);
 	//	Integer usId = usrLogueado.getId();
 		Cuenta cuentaEliminar= cuentaJpaRepository.findByUsuario(usrLogueado);		
+		
+//		List<Comentario> comentarioEliminar  = comentarioJpaRepository.findAllById(cuentaEliminar);
+//	    comentarioJpaRepository.deleteAll(comentarioEliminar);
 		
 		
 		List<Publicacion> publicacionEliminar =  publicacionJpaRepository.findByUserId(usrLogueado.getId());
