@@ -99,24 +99,24 @@
 
 				<div th:each="pub : ${publicaciones}" class="divNoticias">
 					<div>
-						<a href="nuevoPerfil.html"
-							th:text="${pub.unaCuenta?.usuario?.nombre}"></a>
+					
+						<p th:text="${pub.unaCuenta?.usuario?.nombre}" style="font-size: 25px;"></p>
 							
 						
-						<form action="seguir" method="post">
+	  					<form action="seguir" method="post">
 							<input type="hidden" name="idCuentaASeguir" th:value="${pub.unaCuenta?.id}">
 							<button  type="submit" class="btn btn-outline-success"
 								style="float: right">Seguimiento</button>								 
 						</form>
-								
+							
 
 	<!-- 				<form action="seguir" method="post">
 							<input type="hidden" name="idCuentaASeguir" th:value="${pub.unaCuenta?.id}">
 							<button type="submit" class="btn btn-outline-success"
-								style="float:
-								th:text="${ } ?'Dejar de seguir' : Seguir"></button>
+								style="float:right"
+								th:text="${pub.unaCuenta?.id} ?"Dejar de seguir" : Seguir"></button>
 						</form>
- -->	
+	 -->
 					</div>
 					<br>
 					<hr>
@@ -134,8 +134,8 @@
 						<div>
 							<div th:each="com : ${pub.getUnaListadeComentarios()}"
 								style="display: flex; width: 100%; justify-content: space-between;">
-								<a href="nuevoPerfil.html"><span style="font-size: 15px"
-									th:text="${com.unaCuenta.usuario.nombre}"></span></a>
+								<span style="font-size: 15px"
+									th:text="${com.unaCuenta.usuario.nombre}"></span>
 								<p th:text="${com.unComentario}"
 									style="font-size: 12px; flex-wrap: wrap;"></p>
 
@@ -178,10 +178,10 @@
 				</div>
 				<div class="personaChat2">
 					<a th:href="'sucundumsucundum?Email=' + ${DivSeguidos.getUsuario().getEmail()}" th:text="${DivSeguidos.getUsuario().getNombre()}">Susanita Lopez</a>
-					<form action="eliminarVinculo" method ="post">
+	<!--  				<form action="eliminarVinculo" method ="post">
 					<input type="hidden" name="idCuentaADejarDeSeguir" th:value = ${DivSeguidos.getUsuario().getId()}>
 					<button class="eliminarEditarComentarios"> Borrar </button>
-				</form>
+			</form>   -->	
 		</div>	
 			</div>	
 		</div>

@@ -70,7 +70,7 @@ public class HomeController {
 	}
 
     
-    @GetMapping("/sucundumsucundum")
+    @GetMapping("/sucundumsucundum")  //link para ir al perfil de los amigos desde el div listado de amigos. 
 	public String getMiMuro(Usuario usr , Model model, HttpServletRequest request) {
 //parte que busca la informacion en la DB
     	Usuario usrPerfil = usuarioJpaRepository.findByEmail(usr.getEmail());
